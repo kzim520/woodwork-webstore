@@ -1,10 +1,12 @@
+import { Outlet } from "react-router-dom";
+
 const Layout = () => {
   return (
     <>
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a className="nav-link active" href="#">
-            Shop
+            My Work
           </a>
         </li>
         <li className="nav-item">
@@ -14,10 +16,11 @@ const Layout = () => {
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">
-            My Work
+            Shop
           </a>
         </li>
       </ul>
+      <Outlet />
     </>
   );
 };
