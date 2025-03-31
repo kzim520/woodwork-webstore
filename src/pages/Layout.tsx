@@ -1,23 +1,24 @@
 import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Layout = () => {
   return (
     <>
       <ul className="nav nav-tabs">
         <li className="nav-item">
-          <a className="nav-link active" href="#">
+          <Link className="nav-link active" to="/">
             My Work
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <Link className="nav-link" to="/custom-orders">
             Custom Orders
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <Link className="nav-link" to="/shop">
             Shop
-          </a>
+          </Link>
         </li>
       </ul>
       <Outlet />

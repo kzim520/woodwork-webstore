@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import MyWork from "./pages/MyWork";
+import CustomOrders from "./pages/CustomOrders";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MyWork />} />
+          <Route path="custom-orders" element={<CustomOrders />} />
+          <Route path="shop" element={<Shop />} />
         </Route>
       </Routes>
     </BrowserRouter>
