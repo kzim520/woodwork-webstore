@@ -51,7 +51,8 @@ function CustomOrders() {
       </p>
 
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-8 offset-md-2">
+          {/* ✅ Use a single form that contains all inputs */}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
@@ -94,11 +95,6 @@ function CustomOrders() {
                 onChange={handleChange}
               />
             </div>
-          </form>
-        </div>
-
-        <div className="col-md-6">
-          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="projectDescription" className="form-label">
                 Project Description <span style={{ color: "red" }}>*</span>
