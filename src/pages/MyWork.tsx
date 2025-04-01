@@ -1,3 +1,5 @@
+import Portfolio from "../components/Portfolio";
+
 function MyWork() {
   return (
     <div className="container">
@@ -7,7 +9,7 @@ function MyWork() {
       <div className="row">
         <div className="col-md-4 d-flex justify-content-center">
           <img
-            src="/portrait.jpg"
+            src="/assets/portrait.jpg"
             alt="My portrait"
             className="img-fluid mt-5 border border-dark rounded"
             style={{ width: "350px", height: "auto" }}
@@ -34,6 +36,14 @@ function MyWork() {
               Lets Build your Idea!
             </button>
           </div>
+        </div>
+      </div>
+      <div id="portfolio">
+        <p className="display-4 text-center fw-medium mt-5">
+          Completed Projects
+        </p>
+        <div className="mb-5">
+          <Portfolio></Portfolio>
         </div>
       </div>
     </div>
