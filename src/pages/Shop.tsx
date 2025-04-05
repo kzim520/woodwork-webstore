@@ -6,9 +6,7 @@ function Shop() {
       </p>
       <div className="row">
         <div className="col-md-12 mt-5">
-          <p className="fs-4">
-            Explore our selection of handcrafted furniture!
-          </p>
+          <p className="fs-4">Coming Soon!</p>
           {/* add shop content here */}
         </div>
       </div>

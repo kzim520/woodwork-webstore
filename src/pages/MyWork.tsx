@@ -1,6 +1,13 @@
+import { useRef } from "react";
 import Portfolio from "../components/Portfolio";
 
 function MyWork() {
+  const portfolioRef = useRef<HTMLDivElement>(null);
+
+  const scrollToPortfolio = () => {
+    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="container">
       <p className="display-4 text-center fw-medium mt-5">
@@ -33,17 +40,27 @@ function MyWork() {
               let’s make it happen!
             </p>
             <button className="btn btn-dark btn-lg mt-3">
-              Lets Build your Idea!
+              Let’s Build Your Idea!
+            </button>
+
+            {/* 🚀 New scroll button */}
+            <button
+              className="btn btn-outline-dark btn-lg mt-3 ms-3"
+              onClick={scrollToPortfolio}
+            >
+              See My Work ↓
             </button>
           </div>
         </div>
       </div>
-      <div id="portfolio">
+
+      {/* 🎯 Target scroll section */}
+      <div id="portfolio" ref={portfolioRef}>
         <p className="display-4 text-center fw-medium mt-5">
           Completed Projects
         </p>
         <div className="mb-5">
-          <Portfolio></Portfolio>
+          <Portfolio />
         </div>
       </div>
     </div>

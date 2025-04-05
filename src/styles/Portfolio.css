@@ -1,0 +1,23 @@
+.portfolio-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px; /* Adds space between the cards */
+}
+
+.portfolio-card-wrapper {
+  flex: 0 0 33.3333%; /* Show 3 cards by default */
+  min-width: 250px; /* Ensure minimum width to prevent cards from becoming too small */
+  max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+@media (max-width: 992px) {
+  .portfolio-card-wrapper {
+    flex: 0 0 50%; /* Show 2 cards on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-card-wrapper {
+    flex: 0 0 100%; /* Show 1 card on phones */
+  }
+}
