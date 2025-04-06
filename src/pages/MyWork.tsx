@@ -1,11 +1,17 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Portfolio from "../components/Portfolio";
 
 function MyWork() {
   const portfolioRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleNavigateToCustomOrders = () => {
+    navigate("/custom-orders"); // 👈 Navigate to custom orders page
   };
 
   return (
@@ -39,7 +45,10 @@ function MyWork() {
               project at a time). Take a look around, and if you have an idea,
               let’s make it happen!
             </p>
-            <button className="btn btn-dark btn-lg mt-3">
+            <button
+              className="btn btn-dark btn-lg mt-3"
+              onClick={handleNavigateToCustomOrders}
+            >
               Let’s Build Your Idea!
             </button>
 

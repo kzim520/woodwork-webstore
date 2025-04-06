@@ -19,34 +19,33 @@ function Portfolio() {
   const items = [
     {
       id: 1, // Add a unique ID for each item
-      title: "Walnut & Cherry Cutting Board",
+      title: "Cutting Boards",
       image: "/assets/cuttingboard.jpg",
-      description:
-        "A handcrafted cutting board made from premium walnut and cherry.",
+      description: "Cutting boards handcrafted to your preference",
     },
     {
       id: 2,
-      title: "Pine Nightstand",
-      image: "/assets/pinetable.jpg",
-      description: "Them tapered legs tho.",
+      title: "Rustic Oak End Table",
+      image: "/assets/redoak.jpg",
+      description: "Red oak coffee table with a weathered finish",
     },
     {
       id: 3,
-      title: "Night Stand",
-      image: "/assets/greennightstand.jpg",
-      description: "Frankie's table",
+      title: "Modern Farmhouse Coffee",
+      image: "/assets/coffeetable.jpg",
+      description: "Farmhouse look with a modern twist",
     },
     {
       id: 4,
-      title: "Modern Farmhouse Coffee Table",
-      image: "/assets/coffeetable.jpg",
-      description: "Table",
+      title: "Simple Pine Table",
+      image: "/assets/pinetable.jpg",
+      description: "Simple yet elegant pine table",
     },
     {
       id: 5,
-      title: "Maple, Cherry, and Walnut Cutting Board",
-      image: "/assets/bread.JPEG",
-      description: "That sourdough tho",
+      title: "Refinishing services",
+      image: "/assets/greennightstand.jpg",
+      description: "Refinished nightstand from 1950's",
     },
   ];
 

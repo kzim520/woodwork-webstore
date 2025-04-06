@@ -34,14 +34,38 @@ Perfect for both daily use and presentation, this cutting board makes a thoughtf
   },
   {
     id: 2,
-    title: "Pine Nightstand",
-    image: "/assets/pinetable.jpg",
-    description: "Them tapered legs tho.",
-    message: "*read description below for reccomended dimensions",
-    detailedDescription:
-      "This Pine Nightstand features sleek tapered legs, offering a mid-century modern aesthetic with practical storage space. It's perfect for any modern bedroom.",
+    title: "Rustic Red Oak End Table",
+    image: "/assets/redoak.jpg",
+    description: "Red oak table finished with a distinct weathered look",
+    message: "*read description below for recommended dimensions",
+    detailedDescription: "Coming soon",
   },
-  // Add more items here
+  {
+    id: 3,
+    title: "Modern Farmhouse Coffee Table",
+    image: "/assets/coffeetable.jpg",
+    description: "Farmhouse coffee table with a modern finish",
+    message: "*read description below for recommended dimensions",
+    detailedDescription: "Coming soon",
+  },
+  {
+    id: 4,
+    title: "Simple Pine Table",
+    image: "/assets/pinetable.jpg",
+    description: "Pine table with a simple yet elegant finish",
+    message: "*read description below for recommended dimensions",
+    detailedDescription: "Coming soon",
+  },
+  {
+    id: 5,
+    title: "Refinished Nightstand",
+    image: "/assets/greennightstand.jpg",
+    description:
+      "Antique nightstand from the 1950's with a refreshing new look",
+    message:
+      "*read description below for details regarding refinished furniture",
+    detailedDescription: "Coming soon",
+  },
 ];
 
 function ItemDetail() {
