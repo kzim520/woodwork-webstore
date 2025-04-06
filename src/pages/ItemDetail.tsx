@@ -6,6 +6,7 @@ interface Item {
   title: string;
   image: string;
   description: string;
+  message: string;
   detailedDescription: string;
 }
 
@@ -15,15 +16,28 @@ const items: Item[] = [
     title: "Walnut & Cherry Cutting Board",
     image: "/assets/cuttingboard.jpg",
     description:
-      "A handcrafted cutting board made from premium walnut and cherry.",
-    detailedDescription:
-      "This cutting board is designed for durability and style, featuring a blend of walnut and cherry wood. It is hand-sanded and finished to ensure smooth surfaces and a long-lasting finish.",
+      "Handscrafted cutting boards made to your prefered dimension and wood spieces. Including walnut, maple, cherry, purple heart and more.",
+    message: "*read description below for reccomended dimensions",
+    detailedDescription: `This handcrafted cutting board combines the rich, dark tones of walnut with the warm contrast of cherry, creating a timeless and elegant addition to any kitchen. Designed with durability and style in mind, each board is made from premium hardwoods and finished with food-safe oils and beeswax to ensure long-lasting performance and beauty.
+
+Every board is fully customizable—you can choose the wood species, thickness, and length to suit your needs or kitchen aesthetic. Whether you're looking for a compact prep board or a large serving piece, this cutting board can be tailored to your exact specifications.
+
+Recommended Dimensions:
+
+Width: 8"–12.5"
+Length: 16"–21"
+Thickness: 1.5"–2.5"
+
+Pricing is based on size and wood choice, and quotes are available upon request through the "Custom Orders" tab.
+
+Perfect for both daily use and presentation, this cutting board makes a thoughtful gift or a functional statement piece for your own home.`,
   },
   {
     id: 2,
     title: "Pine Nightstand",
     image: "/assets/pinetable.jpg",
     description: "Them tapered legs tho.",
+    message: "*read description below for reccomended dimensions",
     detailedDescription:
       "This Pine Nightstand features sleek tapered legs, offering a mid-century modern aesthetic with practical storage space. It's perfect for any modern bedroom.",
   },
@@ -62,6 +76,7 @@ function ItemDetail() {
         <div className="col-md-6">
           <h2 className="text-primary mb-3">{item.title}</h2>
           <p className="lead">{item.description}</p>
+          <p className="">{item.message}</p>
           <div className="bg-light p-4 rounded shadow-sm">
             <h4 className="text-dark mb-3">Detailed Description</h4>
             <p>{item.detailedDescription}</p>
