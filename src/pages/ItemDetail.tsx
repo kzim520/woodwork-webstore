@@ -27,7 +27,7 @@ const CustomPrevArrow = (props: any) => {
       style={{
         ...style,
         display: "block",
-        left: "-30px",
+        left: "-20px",
         zIndex: 1,
         color: "#333",
       }}
@@ -44,7 +44,7 @@ const CustomNextArrow = (props: any) => {
       style={{
         ...style,
         display: "block",
-        right: "-30px",
+        right: "-20px",
         zIndex: 1,
         color: "#333",
       }}
@@ -114,7 +114,6 @@ const items: Item[] = [
     title: "Refinished Nightstand",
     images: [
       { src: "/assets/greennightstand.jpg", caption: "Restored finish" },
-      { src: "/assets/greennightstand2.jpg" },
     ],
     description:
       "Antique nightstand from the 1950's with a refreshing new look",
