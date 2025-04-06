@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import ItemCard from "./ItemCard";
-import "../styles/Portfolio.css"; // Make sure this is pointing to the correct CSS file
+import "../styles/Portfolio.css";
 
 function Portfolio() {
   const scrollRef = useRef<HTMLDivElement>(null);

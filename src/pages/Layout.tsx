@@ -6,7 +6,7 @@ const Layout = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand fs-3 fw-bold" to="/">
-            Lookout Mountain Woodworks
+            10th Street Woodworks
           </NavLink>
           <button
             className="navbar-toggler"

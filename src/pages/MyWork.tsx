@@ -11,7 +11,7 @@ function MyWork() {
   };
 
   const handleNavigateToCustomOrders = () => {
-    navigate("/custom-orders"); // 👈 Navigate to custom orders page
+    navigate("/custom-orders");
   };
 
   return (
@@ -35,15 +35,13 @@ function MyWork() {
               I’m a soon-to-be graduate from Colorado School of Mines with a
               degree in Computer Science—but when I’m not coding, you’ll find me
               covered in sawdust, bringing custom woodworking projects to life.
-              I’ve lived in Colorado for the past five years, falling in love
-              with the outdoors, mountain biking, and rock climbing. Woodworking
-              started as a hobby but quickly became a passion. There’s something
-              special about turning raw materials into unique, handcrafted
-              furniture that fits perfectly into someone’s home. Whether you’re
-              looking for a custom-built piece or just browsing, you’re
-              supporting a recent grad trying to chip away at student debt (one
-              project at a time). Take a look around, and if you have an idea,
-              let’s make it happen!
+              Woodworking started as a hobby but quickly became a passion.
+              There’s something special about turning raw materials into unique,
+              handcrafted furniture that fits perfectly into someone’s home.
+              Whether you’re looking for a custom-built piece or just browsing,
+              you’re supporting a recent grad trying to chip away at student
+              debt (one project at a time). Take a look around, and if you have
+              an idea, let’s make it happen!
             </p>
             <button
               className="btn btn-dark btn-lg mt-3"

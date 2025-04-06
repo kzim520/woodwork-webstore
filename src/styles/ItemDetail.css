@@ -1,0 +1,17 @@
+.slick-prev, .slick-next {
+  z-index: 1; /* Make sure arrows are above the image */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Add background for better visibility */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.slick-prev {
+  left: 10px; /* Position the left arrow */
+}
+
+.slick-next {
+  right: 10px; /* Position the right arrow */
+}

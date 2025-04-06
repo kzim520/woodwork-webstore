@@ -3,7 +3,7 @@ import Layout from "./pages/Layout";
 import MyWork from "./pages/MyWork";
 import CustomOrders from "./pages/CustomOrders";
 import Shop from "./pages/Shop";
-import ItemDetail from "./pages/ItemDetail"; // Import the ItemDetail component
+import ItemDetail from "./pages/ItemDetail";
 
 function App() {
   return (
