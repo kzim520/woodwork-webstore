@@ -18,7 +18,23 @@ function CustomOrders() {
     e.preventDefault(); // prevent page reload on form submit
 
     // Process or send the form data here (without email sending logic)
-    console.log(formData);
+    fetch("http://localhost:3001/api/custom-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("✅ Backend response:", data);
+        alert("Order submitted successfully!");
+        // Optionally clear form here
+      })
+      .catch((err) => {
+        console.error("❌ Error sending order:", err);
+        alert("There was a problem submitting your order.");
+      });
 
     // Clear the form after submit
     setFormData({
