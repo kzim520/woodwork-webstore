@@ -1,10 +1,18 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Portfolio from "../components/Portfolio";
 
 function MyWork() {
   const portfolioRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // ✅ Call backend when this page mounts
+  useEffect(() => {
+    fetch("http://localhost:3001/api/hello")
+      .then((res) => res.json())
+      .then((data) => console.log("🚀 Backend says:", data))
+      .catch((err) => console.error("❌ Backend error:", err));
+  }, []);
 
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
