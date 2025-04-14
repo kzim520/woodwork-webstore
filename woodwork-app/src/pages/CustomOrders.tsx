@@ -15,35 +15,45 @@ function CustomOrders() {
 
   // handle form submission
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // prevent page reload on form submit
+    e.preventDefault();
 
-    // Process or send the form data here (without email sending logic)
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("projectDescription", formData.projectDescription);
+
+    // Append each image
+    formData.images.forEach((file) => {
+      data.append("images", file); // "images" matches multer.array("images")
+    });
+
     fetch("http://localhost:3001/api/custom-order", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+      body: data, // no need for headers when using FormData
     })
       .then((res) => res.json())
       .then((data) => {
         console.log("✅ Backend response:", data);
         alert("Order submitted successfully!");
-        // Optionally clear form here
+
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectDescription: "",
+          images: [],
+        });
+
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
       })
       .catch((err) => {
-        console.error("❌ Error sending order:", err);
+        console.error("❌ Error submitting order:", err);
         alert("There was a problem submitting your order.");
       });
-
-    // Clear the form after submit
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      projectDescription: "",
-      images: [], // Reset images after submission
-    });
   };
 
   // Handle changes in form inputs
@@ -90,7 +100,6 @@ function CustomOrders() {
 
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          {/* ✅ Use a single form that contains all inputs */}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">

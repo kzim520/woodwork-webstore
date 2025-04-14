@@ -14,7 +14,6 @@ function App() {
           <Route path="custom-orders" element={<CustomOrders />} />
           <Route path="shop" element={<Shop />} />
           <Route path="item/:id" element={<ItemDetail />} />{" "}
-          {/* Add the ItemDetail route here */}
         </Route>
       </Routes>
     </BrowserRouter>
