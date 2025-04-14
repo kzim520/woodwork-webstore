@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CustomOrders() {
   // store form data
@@ -12,6 +13,7 @@ function CustomOrders() {
 
   // Create a reference for the file input
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   // handle form submission
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,9 +37,14 @@ function CustomOrders() {
       .then((res) => res.json())
       .then((data) => {
         console.log("✅ Backend response:", data);
-        alert("Order submitted successfully!");
 
-        // Clear form
+        navigate("/order-confirmation", {
+          state: {
+            name: formData.name,
+            imagePaths: data.imagePaths,
+          },
+        });
+
         setFormData({
           name: "",
           email: "",
