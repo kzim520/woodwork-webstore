@@ -59,7 +59,7 @@ const items: Item[] = [
     title: "Custom Cutting Boards",
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
-      { src: "/assets/pinetable.jpg", caption: "Close-up of end grain" },
+      { src: "/assets/bread.JPEG", caption: "Maple, Walnut & Cherry" },
       { src: "/assets/cuttingboard3.jpg" }, // No caption
     ],
     description:

@@ -1,23 +1,41 @@
 .portfolio-scroll {
   display: flex;
   flex-wrap: nowrap;
-  gap: 16px; /* Adds space between the cards */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-inline: 1rem;
+  scroll-padding-inline: 1rem;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
 }
 
 .portfolio-card-wrapper {
-  flex: 0 0 33.3333%; /* Show 3 cards by default */
-  min-width: 250px; /* Ensure minimum width to prevent cards from becoming too small */
-  max-width: 100%; /* Ensure it doesn't overflow */
+  flex: 0 0 33.3333%; /* 3 cards per scroll view on desktop */
+  min-width: 250px;
+  max-width: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
+/* Tablet: 2 cards per scroll */
 @media (max-width: 992px) {
   .portfolio-card-wrapper {
-    flex: 0 0 50%; /* Show 2 cards on tablets */
+    flex: 0 0 50%;
   }
 }
 
+/* Mobile: 1 card per scroll */
 @media (max-width: 576px) {
   .portfolio-card-wrapper {
-    flex: 0 0 100%; /* Show 1 card on phones */
+    flex: 0 0 100%;
   }
+}
+
+/* Hover effects */
+.portfolio-card-wrapper .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card-wrapper .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }

@@ -26,7 +26,7 @@ function Portfolio() {
     {
       id: 2,
       title: "Rustic Oak End Table",
-      image: "/assets/redoak.jpg",
+      image: "/assets/oaktable.jpg",
       description: "Red oak coffee table with a weathered finish",
     },
     {
@@ -60,11 +60,25 @@ function Portfolio() {
           <div
             className="d-flex portfolio-scroll"
             ref={scrollRef}
-            style={{ overflowX: "auto", scrollBehavior: "smooth" }}
+            style={{
+              overflowX: "auto",
+              scrollBehavior: "smooth",
+              paddingInline: "1rem",
+              scrollPaddingInline: "1rem",
+              gap: "1rem",
+              scrollSnapType: "x mandatory",
+            }}
           >
             {/* Dynamically render ItemCards */}
             {items.map((item) => (
-              <div key={item.id} className="portfolio-card-wrapper me-3">
+              <div
+                key={item.id}
+                className={"portfolio-card-wrapper flex-shrink-0"}
+                style={{
+                  scrollSnapAlign: "start",
+                  width: "250px",
+                }}
+              >
                 {/* Use Link to navigate to the item detail page */}
                 <Link
                   to={`/item/${item.id}`}

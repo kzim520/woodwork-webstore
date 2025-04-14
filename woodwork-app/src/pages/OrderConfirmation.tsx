@@ -7,7 +7,7 @@ function OrderConfirmation() {
   return (
     <div className="container text-center mt-5">
       <h2 className="mb-4">🎉 Thank you for your custom order!</h2>
-      {name && <p className="fs-4">We'll reach out to you soon, {name}.</p>}
+      {name && <p className="fs-4">I'll reach out to you soon, {name}.</p>}
 
       {imagePaths?.length > 0 && (
         <>
