@@ -1,10 +1,10 @@
 interface Props {
   title: string;
   image: string;
-  description: string;
+  cardDescription: string;
 }
 
-function ItemCard({ title, image, description }: Props) {
+function ItemCard({ title, image, cardDescription }: Props) {
   return (
     <div className="card h-100">
       <div
@@ -30,7 +30,7 @@ function ItemCard({ title, image, description }: Props) {
       </div>
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text flex-grow-1">{description}</p>
+        <p className="card-text flex-grow-1">{cardDescription}</p>
       </div>
     </div>
   );

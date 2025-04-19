@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Portfolio from "../components/Portfolio";
+import { API_URL } from "../utils/api";
 
 function MyWork() {
   const portfolioRef = useRef<HTMLDivElement>(null);
@@ -8,7 +9,7 @@ function MyWork() {
 
   // ✅ Call backend when this page mounts
   useEffect(() => {
-    fetch("http://localhost:3001/api/hello")
+    fetch(`${API_URL}/api/hello`)
       .then((res) => res.json())
       .then((data) => console.log("🚀 Backend says:", data))
       .catch((err) => console.error("❌ Backend error:", err));

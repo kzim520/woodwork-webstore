@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import ItemCard from "./ItemCard";
 import "../styles/Portfolio.css";
+import { items } from "../data/items.ts";
 
 function Portfolio() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,39 +16,6 @@ function Portfolio() {
       });
     }
   };
-
-  const items = [
-    {
-      id: 1, // Add a unique ID for each item
-      title: "Cutting Boards",
-      image: "/assets/cuttingboard.jpg",
-      description: "Cutting boards handcrafted to your preference",
-    },
-    {
-      id: 2,
-      title: "Rustic Oak End Table",
-      image: "/assets/oaktable.jpg",
-      description: "Red oak coffee table with a weathered finish",
-    },
-    {
-      id: 3,
-      title: "Modern Farmhouse Coffee",
-      image: "/assets/coffeetable.jpg",
-      description: "Farmhouse look with a modern twist",
-    },
-    {
-      id: 4,
-      title: "Simple Pine Table",
-      image: "/assets/pinetable.jpg",
-      description: "Simple yet elegant pine table",
-    },
-    {
-      id: 5,
-      title: "Refinishing services",
-      image: "/assets/greennightstand.jpg",
-      description: "Refinished nightstand from 1950's",
-    },
-  ];
 
   return (
     <div className="container mt-5">
@@ -69,25 +37,23 @@ function Portfolio() {
               scrollSnapType: "x mandatory",
             }}
           >
-            {/* Dynamically render ItemCards */}
             {items.map((item) => (
               <div
                 key={item.id}
-                className={"portfolio-card-wrapper flex-shrink-0"}
+                className="portfolio-card-wrapper flex-shrink-0"
                 style={{
                   scrollSnapAlign: "start",
                   width: "250px",
                 }}
               >
-                {/* Use Link to navigate to the item detail page */}
                 <Link
                   to={`/item/${item.id}`}
                   style={{ textDecoration: "none" }}
                 >
                   <ItemCard
                     title={item.title}
-                    image={item.image}
-                    description={item.description}
+                    image={item.images[0].src}
+                    cardDescription={item.cardDescription}
                   />
                 </Link>
               </div>

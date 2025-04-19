@@ -1,3 +1,5 @@
+// TODO: Build out this Shop page with items available for purchase
+
 function Shop() {
   return (
     <div className="container">

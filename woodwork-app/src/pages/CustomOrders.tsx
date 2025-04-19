@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../utils/api";
 
 function CustomOrders() {
   // store form data
@@ -30,7 +31,7 @@ function CustomOrders() {
       data.append("images", file); // "images" matches multer.array("images")
     });
 
-    fetch("http://localhost:3001/api/custom-order", {
+    fetch(`${API_URL}/api/custom-order`, {
       method: "POST",
       body: data, // no need for headers when using FormData
     })

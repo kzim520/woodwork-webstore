@@ -4,20 +4,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-interface ItemImage {
-  src: string;
-  caption?: string;
-}
-
-interface Item {
-  id: number;
-  title: string;
-  images: ItemImage[];
-  description: string;
-  message: string;
-  detailedDescription: string;
-}
+import { items, Item } from "../data/items.ts";
 
 const CustomPrevArrow = (props: any) => {
   const { className, style, onClick } = props;
@@ -53,79 +40,8 @@ const CustomNextArrow = (props: any) => {
   );
 };
 
-const items: Item[] = [
-  {
-    id: 1,
-    title: "Custom Cutting Boards",
-    images: [
-      { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
-      { src: "/assets/bread.JPEG", caption: "Maple, Walnut & Cherry" },
-      { src: "/assets/cuttingboard3.jpg" }, // No caption
-    ],
-    description:
-      "Handscrafted cutting boards made to your prefered dimension and wood spieces. Including walnut, maple, cherry, purple heart and more.",
-    message:
-      "*read description below for reccomended dimensions. The max width I can accommodate is 12.5in ",
-    detailedDescription: `This handcrafted cutting board combines the rich, dark tones of walnut with the 
-    warm contrast of cherry, creating a timeless and elegant addition to any kitchen. Designed with durability 
-    and style in mind, each board is made from premium hardwoods and finished with food-safe oils and beeswax to 
-    ensure long-lasting performance and beauty. Every board is fully customizable—you can choose the wood species, 
-    thickness, length and pattern to suit your needs or kitchen aesthetic. Whether you're looking for a compact prep board 
-    or a large serving piece, this cutting board can be tailored to your exact specifications. Recommended Dimensions:
-    Width: 8"–12.5", Length: 16"–21", Thickness: 1.5"–2.5". Pricing is based on size and wood choice, and quotes are 
-    available upon request through the "Custom Orders" tab. Perfect for both daily use and presentation, this cutting 
-    board makes a thoughtful gift or a functional statement piece for your own home.`,
-  },
-  {
-    id: 2,
-    title: "Rustic Red Oak End Table",
-    images: [
-      { src: "/assets/redoak.jpg", caption: "Rustic finish" },
-      { src: "/assets/redoak2.jpg" },
-    ],
-    description: "Red oak table finished with a distinct weathered look",
-    message: "*read description below for recommended dimensions",
-    detailedDescription: "Coming soon",
-  },
-  {
-    id: 3,
-    title: "Modern Farmhouse Coffee Table",
-    images: [
-      { src: "/assets/coffeetable.jpg", caption: "Full view" },
-      { src: "/assets/coffeetable2.jpg", caption: "Top surface" },
-    ],
-    description: "Farmhouse coffee table with a modern finish",
-    message: "*read description below for recommended dimensions",
-    detailedDescription: "Coming soon",
-  },
-  {
-    id: 4,
-    title: "Simple Pine Table",
-    images: [
-      { src: "/assets/pinetable.jpg" },
-      { src: "/assets/pinetable2.jpg", caption: "Minimalist design" },
-    ],
-    description: "Pine table with a simple yet elegant finish",
-    message: "*read description below for recommended dimensions",
-    detailedDescription: "Coming soon",
-  },
-  {
-    id: 5,
-    title: "Refinished Nightstand",
-    images: [
-      { src: "/assets/greennightstand.jpg", caption: "Restored finish" },
-    ],
-    description:
-      "Antique nightstand from the 1950's with a refreshing new look",
-    message:
-      "*read description below for details regarding refinished furniture",
-    detailedDescription: "Coming soon",
-  },
-];
-
 function ItemDetail() {
   const { id } = useParams<{ id: string }>();
-
   const [item, setItem] = useState<Item | undefined>(undefined);
 
   useEffect(() => {
@@ -145,7 +61,7 @@ function ItemDetail() {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    fade: true, // for fade transition instead of sliding
+    fade: true,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
   };

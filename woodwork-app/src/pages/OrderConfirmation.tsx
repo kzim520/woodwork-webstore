@@ -1,4 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
+import { API_URL } from "../utils/api";
 
 function OrderConfirmation() {
   const location = useLocation();
@@ -16,7 +17,7 @@ function OrderConfirmation() {
             {imagePaths.map((src: string, index: number) => (
               <img
                 key={index}
-                src={`http://localhost:3001${src}`}
+                src={`${API_URL}${src}`}
                 alt={`Uploaded ${index}`}
                 className="img-thumbnail m-2"
                 style={{ width: "120px", height: "120px", objectFit: "cover" }}

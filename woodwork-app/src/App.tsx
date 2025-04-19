@@ -14,7 +14,7 @@ function App() {
           <Route index element={<MyWork />} />
           <Route path="custom-orders" element={<CustomOrders />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="item/:id" element={<ItemDetail />} />{" "}
+          <Route path="item/:id" element={<ItemDetail />} />
           <Route path="order-confirmation" element={<OrderConfirmation />} />
         </Route>
       </Routes>
