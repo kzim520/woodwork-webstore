@@ -1,44 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { items, Item } from "../data/items.ts";
-
-const CustomPrevArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
-    <FaArrowLeft
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        left: "-20px",
-        zIndex: 1,
-        color: "#333",
-      }}
-      onClick={onClick}
-    />
-  );
-};
-
-const CustomNextArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
-    <FaArrowRight
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        right: "-20px",
-        zIndex: 1,
-        color: "#333",
-      }}
-      onClick={onClick}
-    />
-  );
-};
+import { CustomPrevArrow, CustomNextArrow } from "../components/Arrow.tsx";
 
 function ItemDetail() {
   const { id } = useParams<{ id: string }>();
