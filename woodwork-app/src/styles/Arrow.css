@@ -1,45 +1,30 @@
-/* src/components/Arrow.css */
-
 .custom-arrow {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.custom-arrow.left {
-  left: 10px;
-}
-
-.custom-arrow.right {
-  right: 10px;
 }
 
 .custom-arrow:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px; /* where to adjust arrow spacing*/
+}
+
 @media (max-width: 768px) {
-  .custom-arrow.left {
-    left: 5px;
-  }
-
-  .custom-arrow.right {
-    right: 5px;
-  }
-
-  .custom-arrow {
-    width: 30px;
-    height: 30px;
+  .arrow-container {
+    gap: 40px; /* smaller gap for mobile, still side-by-side */
+    flex-direction: row; /* keep them side-by-side on mobile */
   }
 }

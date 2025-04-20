@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,6 +9,7 @@ import { CustomPrevArrow, CustomNextArrow } from "../components/Arrow.tsx";
 function ItemDetail() {
   const { id } = useParams<{ id: string }>();
   const [item, setItem] = useState<Item | undefined>(undefined);
+  const sliderRef = useRef<Slider | null>(null);
 
   useEffect(() => {
     if (id) {
@@ -28,22 +29,21 @@ function ItemDetail() {
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
+    arrows: false, // ⛔️ disable default arrow positioning
   };
 
   return (
     <div className="container mt-5">
       <div className="row">
         {/* Image Carousel Section */}
-        <div className="col-md-6 mb-4 mb-md-0">
-          <Slider {...sliderSettings}>
+        <div className="col-md-6 mb-4 mb-md-0 text-center">
+          <Slider ref={sliderRef} {...sliderSettings}>
             {item.images.map((image, index) => (
-              <div key={index} className="text-center">
+              <div key={index}>
                 <img
                   src={image.src}
                   alt={image.caption || item.title}
-                  className="img-fluid rounded shadow mb-2"
+                  className="img-fluid rounded shadow"
                   onError={(e) => {
                     console.log(
                       "⛔ Failed to load image in ItemDetail, falling back:",
@@ -61,6 +61,16 @@ function ItemDetail() {
               </div>
             ))}
           </Slider>
+
+          {/* Arrows BELOW the slider */}
+          <div className="arrow-container mt-3 d-flex justify-content-center arrow-container">
+            <div onClick={() => sliderRef.current?.slickPrev()}>
+              <CustomPrevArrow />
+            </div>
+            <div onClick={() => sliderRef.current?.slickNext()}>
+              <CustomNextArrow />
+            </div>
+          </div>
         </div>
 
         {/* Item Details Section */}
