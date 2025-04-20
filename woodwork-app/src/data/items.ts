@@ -20,7 +20,6 @@ export const items: Item[] = [
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
       { src: "/assets/bread.JPEG", caption: "Maple, Walnut & Cherry" },
-      { src: "/assets/cuttingboard3.jpg" },
     ],
     cardDescription: "Cutting boards handcrafted to your preference",
     description: "Custom boards with walnut, maple, cherry, and more.",

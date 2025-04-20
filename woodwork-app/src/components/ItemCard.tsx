@@ -1,3 +1,5 @@
+import "../styles/ItemCard.css";
+
 interface Props {
   title: string;
   image: string;
@@ -5,26 +7,18 @@ interface Props {
 }
 
 function ItemCard({ title, image, cardDescription }: Props) {
+  const fallbackImage = "/assets/placeholder.jpg";
+
   return (
     <div className="card h-100">
-      <div
-        className="card-img-container"
-        style={{
-          width: "100%",
-          height: "200px",
-          backgroundColor: "#f8f9fa",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="card-img-container">
         <img
           src={image}
           alt={title}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            objectFit: "contain",
+          onError={(e) => {
+            console.log("⛔ Image failed to load, using fallback for:", image);
+            e.currentTarget.onerror = null; // Prevents infinite loop
+            e.currentTarget.src = fallbackImage;
           }}
         />
       </div>

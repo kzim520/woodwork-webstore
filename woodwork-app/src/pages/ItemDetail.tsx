@@ -78,6 +78,14 @@ function ItemDetail() {
                   src={image.src}
                   alt={image.caption || item.title}
                   className="img-fluid rounded shadow mb-2"
+                  onError={(e) => {
+                    console.log(
+                      "⛔ Failed to load image in ItemDetail, falling back:",
+                      image.src
+                    );
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/assets/placeholder.jpg";
+                  }}
                 />
                 {image.caption && (
                   <p className="text-muted" style={{ fontSize: "0.9rem" }}>
