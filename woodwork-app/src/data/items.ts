@@ -39,6 +39,7 @@ export const items: Item[] = [
     title: "Rustic Red Oak End Table",
     images: [
       { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
+      { src: "/assets/RusticOak2.jpg", caption: "Rustic finish" },
     ],
     cardDescription: "Red oak table with a weathered finish",
     description: "Rustic red oak table with natural grain character.",
@@ -49,8 +50,9 @@ export const items: Item[] = [
     id: 3,
     title: "Modern Farmhouse Coffee Table",
     images: [
-      { src: "/assets/coffeetable.jpg", caption: "Full view" },
-      { src: "/assets/coffeetable2.jpg", caption: "Top surface" },
+      { src: "/assets/coffeetable1.jpg", caption: "Full view" },
+      { src: "/assets/coffeetable2.jpg", caption: "Close up" },
+      { src: "/assets/coffeetable3.jpg", caption: "Top surface" },
     ],
     cardDescription: "Farmhouse look with a modern twist",
     description: "Distressed finish meets clean design for cozy homes.",

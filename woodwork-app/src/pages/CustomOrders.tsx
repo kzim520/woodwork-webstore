@@ -116,6 +116,13 @@ function CustomOrders() {
           envisioning, feel free to upload them. These visuals go a long way in
           helping me understand your project goals.
         </p>
+
+        <p className="fw-medium">
+          <span style={{ color: "red" }}>*</span> If you have any questions feel
+          free to email me at{" "}
+          <a href="mailto:kevinzimmer520@gmail.com">kevinzimmer520@gmail.com</a>
+          .
+        </p>
       </div>
 
       <div className="row">
