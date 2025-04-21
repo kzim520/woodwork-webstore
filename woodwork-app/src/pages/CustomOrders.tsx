@@ -102,9 +102,21 @@ function CustomOrders() {
 
   return (
     <div className="container">
-      <p className="display-4 text-center fw-medium mt-5">
-        Custom Order Request Form
-      </p>
+      <p className="display-4 text-center fw-medium mt-5">Custom Order Form</p>
+      <div
+        className="mt-4 mb-4 text-start"
+        style={{ maxWidth: "900px", margin: "0 auto" }}
+      >
+        <p className="lead fw-medium">
+          Enter your contact information and a description of what you're
+          looking for. Any details you can provide will help me bring your
+          vision to life—wood species, overall dimensions, desired features, and
+          intended use are all great starting points. Additionally, if you have
+          any reference photos that resemble the style, shape, or finish you're
+          envisioning, feel free to upload them. These visuals go a long way in
+          helping me understand your project goals.
+        </p>
+      </div>
 
       <div className="row">
         <div className="col-md-8 offset-md-2">

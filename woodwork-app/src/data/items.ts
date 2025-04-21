@@ -19,7 +19,7 @@ export const items: Item[] = [
     title: "Custom Cutting Boards",
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
-      { src: "/assets/bread.JPEG", caption: "Maple, Walnut & Cherry" },
+      { src: "/assets/cuttingboard2.jpg", caption: "Maple, Walnut & Cherry" },
     ],
     cardDescription: "Cutting boards handcrafted to your preference",
     description: "Custom boards with walnut, maple, cherry, and more.",
@@ -38,13 +38,12 @@ export const items: Item[] = [
     id: 2,
     title: "Rustic Red Oak End Table",
     images: [
-      { src: "/assets/redoak.jpg", caption: "Rustic finish" },
-      { src: "/assets/redoak2.jpg" },
+      { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
     ],
     cardDescription: "Red oak table with a weathered finish",
     description: "Rustic red oak table with natural grain character.",
     message: "*read description below for recommended dimensions",
-    detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With clean lines and sturdy construction, it’s perfect for use beside a couch or bed. Custom dimensions are available upon request.`
+    detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Custom dimensions are available upon request.`
   },
   {
     id: 3,
