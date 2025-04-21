@@ -15,3 +15,21 @@
 .slick-next {
   right: 10px; /* Position the right arrow */
 }
+
+.carousel-img-wrapper {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or 'contain' if you want to see the full image */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

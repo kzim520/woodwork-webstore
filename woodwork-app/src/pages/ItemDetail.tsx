@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { items, Item } from "../data/items.ts";
 import { CustomPrevArrow, CustomNextArrow } from "../components/Arrow.tsx";
+import "../styles/ItemDetail.css";
 
 function ItemDetail() {
   const { id } = useParams<{ id: string }>();
@@ -64,11 +65,11 @@ function ItemDetail() {
 
           <Slider ref={sliderRef} {...sliderSettings}>
             {item.images.map((image, index) => (
-              <div key={index}>
+              <div key={index} className="carousel-img-wrapper">
                 <img
                   src={image.src}
                   alt={image.caption || item.title}
-                  className="img-fluid rounded shadow"
+                  className="carousel-img"
                   onError={(e) => {
                     console.log(
                       "⛔ Failed to load image in ItemDetail, falling back:",
@@ -91,6 +92,12 @@ function ItemDetail() {
           <div className="bg-light p-4 rounded shadow-sm">
             <h4 className="text-dark mb-3">Detailed Description</h4>
             <p>{item.detailedDescription}</p>
+
+            <div className="mt-4 text-center text-md-start">
+              <Link to="/custom-orders" className="btn btn-outline-dark">
+                Start a Custom Order
+              </Link>
+            </div>
           </div>
         </div>
       </div>

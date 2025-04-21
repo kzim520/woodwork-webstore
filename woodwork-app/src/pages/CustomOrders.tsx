@@ -118,8 +118,8 @@ function CustomOrders() {
         </p>
 
         <p className="fw-medium">
-          <span style={{ color: "red" }}>*</span> If you have any questions feel
-          free to email me at{" "}
+          <span style={{ color: "black" }}>*</span> If you have any questions
+          feel free to email me at{" "}
           <a href="mailto:kevinzimmer520@gmail.com">kevinzimmer520@gmail.com</a>
           .
         </p>
