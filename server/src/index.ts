@@ -66,6 +66,10 @@ app.post(
   }
 );
 
+app.get("/api/custom-order", (_req: Request, res: Response) => {
+  res.status(200).json({ message: "Custom order endpoint is healthy." });
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Server is listening on http://localhost:${PORT}`);
 });
