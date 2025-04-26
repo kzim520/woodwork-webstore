@@ -19,8 +19,17 @@ function Portfolio() {
 
   return (
     <div className="container mt-5">
+      {/* Swipe hint text only on mobile */}
+      <div className="text-center d-md-none mb-3">
+        <p className="swipe-hint">← Swipe to explore →</p>
+      </div>
+
       <div className="d-flex align-items-center">
-        <button onClick={() => scroll("left")} className="btn btn-dark me-2">
+        {/* Hide arrows on mobile */}
+        <button
+          onClick={() => scroll("left")}
+          className="btn btn-dark me-2 d-none d-md-inline"
+        >
           &#8592;
         </button>
 
@@ -61,7 +70,11 @@ function Portfolio() {
           </div>
         </div>
 
-        <button onClick={() => scroll("right")} className="btn btn-dark ms-2">
+        {/* Hide arrows on mobile */}
+        <button
+          onClick={() => scroll("right")}
+          className="btn btn-dark ms-2 d-none d-md-inline"
+        >
           &#8594;
         </button>
       </div>

@@ -35,13 +35,13 @@ export const items: Item[] = [
   },
   {
     id: 2,
-    title: "Rustic Red Oak End Table",
+    title: "Rustic Oak End Table",
     images: [
       { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
       { src: "/assets/RusticOak2.jpg", caption: "Rustic finish" },
     ],
     cardDescription: "Red oak table with a weathered finish",
-    description: "Rustic red oak table with natural grain character.",
+    description: "Rustic oak table with natural grain character.",
     message: "*Available in custom dimensions and finishes. Dimensions in pictures: 27in x 27in x 24in (w x d x h)",
     detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Fill out a custom order form if interested!`
   },
@@ -73,8 +73,8 @@ export const items: Item[] = [
     id: 5,
     title: "Refinishing Services",
     images: [
-      { src: "/assets/greennightstand.jpg", caption: "After: Refinished nightstand from 1950's" },
-      { src: "/assets/frank.jpg", caption: "Before: Frankie helping me assess" },
+      { src: "/assets/greennightstand.jpg", caption: "Refinished nightstand" },
+      { src: "/assets/frank.jpg", caption: "Frankie helping me assess" },
     ],
     cardDescription: "Refinished nightstand from 1950's",
     description: "Bring new life to worn or vintage furniture.",
