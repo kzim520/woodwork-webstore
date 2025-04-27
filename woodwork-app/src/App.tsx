@@ -5,10 +5,12 @@ import CustomOrders from "./pages/CustomOrders";
 import Shop from "./pages/Shop";
 import ItemDetail from "./pages/ItemDetail";
 import OrderConfirmation from "./pages/OrderConfirmation";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MyWork />} />

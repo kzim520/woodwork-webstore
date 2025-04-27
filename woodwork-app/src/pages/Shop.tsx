@@ -1,5 +1,3 @@
-// TODO: Build out this Shop page with items available for purchase
-
 function Shop() {
   return (
     <div className="container">
@@ -7,9 +5,11 @@ function Shop() {
         Welcome to the Shop
       </p>
       <div className="row">
-        <div className="col-md-12 mt-5">
-          <p className="fs-4">Coming Soon!</p>
-          {/* add shop content here */}
+        <div className="col-md-12 mt-5 text-center">
+          <p className="fs-4 mb-3">🛠️ I'm building something special!</p>
+          <p className="fs-5">
+            Check back soon to browse handcrafted pieces and custom creations.
+          </p>
         </div>
       </div>
     </div>

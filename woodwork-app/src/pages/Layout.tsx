@@ -18,6 +18,7 @@ const Layout = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
+            {/* <span className="ms-2 fw-bold">Menu</span> */}
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">

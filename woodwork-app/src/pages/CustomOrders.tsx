@@ -3,22 +3,25 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/api";
 
 function CustomOrders() {
-  // store form data
+  const backendAvailable = false;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     projectDescription: "",
-    images: [] as File[], // Store the selected files here
+    images: [] as File[],
   });
 
-  // Create a reference for the file input
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  // handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!backendAvailable) {
+      alert("⚙️ Backend under construction. Please try again later!");
+      return;
+    }
 
     const data = new FormData();
     data.append("name", formData.name);
@@ -26,26 +29,23 @@ function CustomOrders() {
     data.append("phone", formData.phone);
     data.append("projectDescription", formData.projectDescription);
 
-    // Append each image
     formData.images.forEach((file) => {
-      data.append("images", file); // "images" matches multer.array("images")
+      data.append("images", file);
     });
 
     fetch(`${API_URL}/api/custom-order`, {
       method: "POST",
-      body: data, // no need for headers when using FormData
+      body: data,
     })
       .then((res) => res.json())
       .then((data) => {
         console.log("✅ Backend response:", data);
-
         navigate("/order-confirmation", {
           state: {
             name: formData.name,
             imagePaths: data.imagePaths,
           },
         });
-
         setFormData({
           name: "",
           email: "",
@@ -53,7 +53,6 @@ function CustomOrders() {
           projectDescription: "",
           images: [],
         });
-
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
         }
@@ -64,36 +63,27 @@ function CustomOrders() {
       });
   };
 
-  // Handle changes in form inputs
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Handle file input change (multiple files can be selected)
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      // Append newly selected files to the existing array of images
       setFormData({
         ...formData,
-        images: [...formData.images, ...Array.from(files)], // Append selected files
+        images: [...formData.images, ...Array.from(files)],
       });
     }
   };
 
-  // Function to clear the selected files
   const handleClearPhotos = () => {
-    // Reset the file input to clear the selected files
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
-    // Also clear the images in formData
     setFormData({
       ...formData,
       images: [],
@@ -103,6 +93,18 @@ function CustomOrders() {
   return (
     <div className="container">
       <p className="display-4 text-center fw-medium mt-5">Custom Order Form</p>
+
+      {/* 🚧 Backend maintenance notice */}
+      {!backendAvailable && (
+        <div
+          className="alert alert-warning text-center fw-bold mt-3"
+          role="alert"
+        >
+          ⚙️ Backend is currently under construction. Form submissions are
+          temporarily disabled.
+        </div>
+      )}
+
       <div
         className="mt-4 mb-4 text-start"
         style={{ maxWidth: "900px", margin: "0 auto" }}
@@ -113,8 +115,7 @@ function CustomOrders() {
           vision to life—wood species, overall dimensions, desired features, and
           intended use are all great starting points. Additionally, if you have
           any reference photos that resemble the style, shape, or finish you're
-          envisioning, feel free to upload them. These visuals go a long way in
-          helping me understand your project goals.
+          envisioning, feel free to upload them.
         </p>
 
         <p className="fw-medium">
@@ -127,7 +128,8 @@ function CustomOrders() {
 
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="pb-5">
+            {/* Name field */}
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Your Name <span style={{ color: "red" }}>*</span>
@@ -142,6 +144,8 @@ function CustomOrders() {
                 required
               />
             </div>
+
+            {/* Email field */}
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Your Email <span style={{ color: "red" }}>*</span>
@@ -156,6 +160,8 @@ function CustomOrders() {
                 required
               />
             </div>
+
+            {/* Phone number field */}
             <div className="mb-3">
               <label htmlFor="phone" className="form-label">
                 Your Phone Number
@@ -169,6 +175,8 @@ function CustomOrders() {
                 onChange={handleChange}
               />
             </div>
+
+            {/* Project description field */}
             <div className="mb-3">
               <label htmlFor="projectDescription" className="form-label">
                 Project Description <span style={{ color: "red" }}>*</span>
@@ -184,7 +192,7 @@ function CustomOrders() {
               />
             </div>
 
-            {/* File Input for Multiple Images */}
+            {/* Images upload field */}
             <div className="mb-3">
               <label htmlFor="images" className="form-label">
                 Attach Images (Optional)
@@ -195,38 +203,36 @@ function CustomOrders() {
                 name="images"
                 className="form-control"
                 accept="image/*"
-                multiple // Allows multiple file selections
+                multiple
                 onChange={handleFileChange}
-                ref={fileInputRef} // Add reference here
+                ref={fileInputRef}
               />
             </div>
 
-            {/* Display selected image previews (Optional) */}
-            <div className="mt-3">
-              {formData.images.length > 0 && (
-                <div>
-                  <p>Selected Images:</p>
-                  <div className="d-flex flex-wrap">
-                    {formData.images.map((image, index) => (
-                      <div key={index} className="m-2">
-                        <img
-                          src={URL.createObjectURL(image)}
-                          alt={`Selected ${index}`}
-                          className="img-thumbnail"
-                          style={{
-                            width: "100px",
-                            height: "100px",
-                            objectFit: "cover",
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
+            {/* Image previews */}
+            {formData.images.length > 0 && (
+              <div className="mt-3">
+                <p>Selected Images:</p>
+                <div className="d-flex flex-wrap">
+                  {formData.images.map((image, index) => (
+                    <div key={index} className="m-2">
+                      <img
+                        src={URL.createObjectURL(image)}
+                        alt={`Selected ${index}`}
+                        className="img-thumbnail"
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </div>
+                  ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
 
-            {/* Button to Clear Photos (Aligned to the Left) */}
+            {/* Clear images button */}
             <div className="d-flex justify-content-start">
               <button
                 type="button"
@@ -237,9 +243,13 @@ function CustomOrders() {
               </button>
             </div>
 
-            {/* Submit Order Button (Centered) */}
+            {/* Submit button */}
             <div className="d-flex justify-content-center">
-              <button type="submit" className="btn btn-dark btn-lg mt-3">
+              <button
+                type="submit"
+                className="btn btn-dark btn-lg mt-4"
+                disabled={!backendAvailable}
+              >
                 Submit Order
               </button>
             </div>

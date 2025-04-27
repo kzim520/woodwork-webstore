@@ -40,7 +40,7 @@ export const items: Item[] = [
       { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
       { src: "/assets/RusticOak2.jpg", caption: "Rustic finish" },
     ],
-    cardDescription: "Red oak table with a weathered finish",
+    cardDescription: "Oak table with a weathered finish",
     description: "Rustic oak table with natural grain character.",
     message: "*Available in custom dimensions and finishes. Dimensions in pictures: 27in x 27in x 24in (w x d x h)",
     detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Fill out a custom order form if interested!`

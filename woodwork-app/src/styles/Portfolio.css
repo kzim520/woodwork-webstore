@@ -56,3 +56,10 @@
     transform: translateY(0px);
   }
 }
+
+.click-hint {
+  font-size: 0.9rem;
+  color: #555;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}

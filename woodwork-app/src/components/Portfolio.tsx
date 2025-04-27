@@ -1,3 +1,89 @@
+// import { Link } from "react-router-dom";
+// import { useRef } from "react";
+// import ItemCard from "./ItemCard";
+// import "../styles/Portfolio.css";
+// import { items } from "../data/items.ts";
+
+// function Portfolio() {
+//   const scrollRef = useRef<HTMLDivElement>(null);
+
+//   const scroll = (direction: "left" | "right") => {
+//     if (scrollRef.current) {
+//       const scrollAmount = scrollRef.current.offsetWidth * 0.8;
+//       scrollRef.current.scrollBy({
+//         left: direction === "left" ? -scrollAmount : scrollAmount,
+//         behavior: "smooth",
+//       });
+//     }
+//   };
+
+//   return (
+//     <div className="container mt-5">
+//       {/* Swipe hint text only on mobile */}
+//       <div className="text-center d-md-none mb-3">
+//         <p className="swipe-hint">← Swipe to explore →</p>
+//       </div>
+
+//       <div className="d-flex align-items-center">
+//         {/* Hide arrows on mobile */}
+//         <button
+//           onClick={() => scroll("left")}
+//           className="btn btn-dark me-2 d-none d-md-inline"
+//         >
+//           &#8592;
+//         </button>
+
+//         <div className="flex-grow-1 overflow-hidden">
+//           <div
+//             className="d-flex portfolio-scroll"
+//             ref={scrollRef}
+//             style={{
+//               overflowX: "auto",
+//               scrollBehavior: "smooth",
+//               paddingInline: "1rem",
+//               scrollPaddingInline: "1rem",
+//               gap: "1rem",
+//               scrollSnapType: "x mandatory",
+//             }}
+//           >
+//             {items.map((item) => (
+//               <div
+//                 key={item.id}
+//                 className="portfolio-card-wrapper flex-shrink-0"
+//                 style={{
+//                   scrollSnapAlign: "start",
+//                   width: "250px",
+//                 }}
+//               >
+//                 <Link
+//                   to={`/item/${item.id}`}
+//                   style={{ textDecoration: "none" }}
+//                 >
+//                   <ItemCard
+//                     title={item.title}
+//                     image={item.images[0].src}
+//                     cardDescription={item.cardDescription}
+//                   />
+//                 </Link>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Hide arrows on mobile */}
+//         <button
+//           onClick={() => scroll("right")}
+//           className="btn btn-dark ms-2 d-none d-md-inline"
+//         >
+//           &#8594;
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Portfolio;
+
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import ItemCard from "./ItemCard";
@@ -34,36 +120,22 @@ function Portfolio() {
         </button>
 
         <div className="flex-grow-1 overflow-hidden">
-          <div
-            className="d-flex portfolio-scroll"
-            ref={scrollRef}
-            style={{
-              overflowX: "auto",
-              scrollBehavior: "smooth",
-              paddingInline: "1rem",
-              scrollPaddingInline: "1rem",
-              gap: "1rem",
-              scrollSnapType: "x mandatory",
-            }}
-          >
+          <div className="portfolio-scroll" ref={scrollRef}>
             {items.map((item) => (
-              <div
-                key={item.id}
-                className="portfolio-card-wrapper flex-shrink-0"
-                style={{
-                  scrollSnapAlign: "start",
-                  width: "250px",
-                }}
-              >
+              <div key={item.id} className="portfolio-card-wrapper">
                 <Link
                   to={`/item/${item.id}`}
                   style={{ textDecoration: "none" }}
+                  className="card-hover-link d-flex flex-column align-items-center"
                 >
                   <ItemCard
                     title={item.title}
                     image={item.images[0].src}
                     cardDescription={item.cardDescription}
                   />
+                  <p className="click-hint text-center mt-2 mb-0">
+                    Click to view details
+                  </p>
                 </Link>
               </div>
             ))}
