@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/api";
 
 function CustomOrders() {
-  const backendAvailable = false;
+  const backendAvailable = true;
 
   const [formData, setFormData] = useState({
     name: "",
