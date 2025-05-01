@@ -1,18 +1,41 @@
+// === Type Definitions ===
+
+/**
+ * Represents a single image associated with an item.
+ * - `src`: URL or path to the image.
+ * - `caption`: Optional description or label for the image.
+ */
 export interface ItemImage {
   src: string;
   caption?: string;
 }
 
+/**
+ * Represents a portfolio item or product.
+ * - `id`: Unique identifier.
+ * - `title`: Display name of the item.
+ * - `images`: Array of image objects, each with a source and optional caption.
+ * - `cardDescription`: Short summary shown in item cards on the portfolio page.
+ * - `description`: One-liner shown on the item detail page.
+ * - `message`: Additional notes or disclaimers (e.g., dimensions or custom availability).
+ * - `detailedDescription`: Rich, longer-form description shown on the item detail page.
+ */
 export interface Item {
   id: number;
   title: string;
-  images: { src: string; caption?: string }[];
-  cardDescription: string; // Used on portfolio cards
-  description: string;     // Used on detail page
+  images: ItemImage[];
+  cardDescription: string;
+  description: string;
   message: string;
   detailedDescription: string;
 }
 
+// === Data: Portfolio Items ===
+
+/**
+ * List of portfolio items to be displayed in the app.
+ * Each item can be displayed in a portfolio carousel, item detail view, or used for custom order reference.
+ */
 export const items: Item[] = [
   {
     id: 1,
@@ -23,7 +46,8 @@ export const items: Item[] = [
     ],
     cardDescription: "Cutting boards handcrafted to your preference",
     description: "Custom boards with walnut, maple, cherry, and more.",
-    message: "*Read description below for recommended dimensions. The max width I can accommodate is 12.5in. Dimensions in pictures: 21in x 12.5in x 1.5in (length x width x thickness)",
+    message:
+      "*Read description below for recommended dimensions. The max width I can accommodate is 12.5in. Dimensions in pictures: 21in x 12.5in x 1.5in (length x width x thickness)",
     detailedDescription: `Designed with durability 
     and style in mind, each board is made from premium hardwoods and finished with food-safe oils and beeswax to 
     ensure long-lasting performance and beauty. Every board is fully customizable—you can choose the wood species, 

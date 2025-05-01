@@ -3,32 +3,56 @@ import { useNavigate } from "react-router-dom";
 import Portfolio from "../components/Portfolio";
 // import { API_URL } from "../utils/api";
 
+/**
+ * MyWork Component
+ *
+ * Serves as the landing page to introduce the creator (Kevin Zimmer)
+ * and showcase recent woodworking projects. The page includes:
+ * - A personal intro and portrait
+ * - Buttons to navigate to the custom order form or scroll to the portfolio
+ * - A reusable <Portfolio /> component displaying project cards
+ */
 function MyWork() {
-  const portfolioRef = useRef<HTMLDivElement>(null);
+  const portfolioRef = useRef<HTMLDivElement>(null); // Ref for scroll-to-section
   const navigate = useNavigate();
 
-  // ✅ Call backend when this page mounts
+  /**
+   * useEffect (on mount)
+   * Used for optional backend health check.
+   * Left commented out to avoid unnecessary fetches in production.
+   */
   useEffect(() => {
     console.log("MyWork loaded — API fetch commented out.");
+
+    // test backend connectivity during development
     // fetch(`${API_URL}/api/hello`)
     //   .then((res) => res.json())
     //   .then((data) => console.log("🚀 Backend says:", data))
     //   .catch((err) => console.error("❌ Backend error:", err));
   }, []);
 
+  /**
+   * Scroll smoothly to the portfolio section
+   */
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  /**
+   * Navigate to the custom orders form
+   */
   const handleNavigateToCustomOrders = () => {
     navigate("/custom-orders");
   };
 
   return (
     <div className="container">
+      {/* === Header Section === */}
       <p className="display-4 text-center fw-medium mt-5">
         Get to Know Me and My Work
       </p>
+
+      {/* === Bio + Portrait Section === */}
       <div className="row">
         <div className="col-md-4 d-flex justify-content-center">
           <img
@@ -53,14 +77,15 @@ function MyWork() {
               time). Take a look around, and if you have an idea, let’s make it
               happen!
             </p>
+
+            {/* CTA Buttons */}
             <button
               className="btn btn-dark btn-lg mt-3"
               onClick={handleNavigateToCustomOrders}
             >
-              Let’s Build Your Idea!
+              Request a Custom Build
             </button>
 
-            {/* 🚀 New scroll button */}
             <button
               className="btn btn-outline-dark btn-lg mt-3 ms-3"
               onClick={scrollToPortfolio}
@@ -71,7 +96,7 @@ function MyWork() {
         </div>
       </div>
 
-      {/* 🎯 Target scroll section */}
+      {/* === Portfolio Section === */}
       <div id="portfolio" ref={portfolioRef}>
         <p className="display-4 text-center fw-medium mt-5">Recent Projects</p>
         <div className="mb-5">

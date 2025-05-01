@@ -2,9 +2,24 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/api";
 
+/**
+ * CustomOrders Component
+ *
+ * Renders a full custom order form allowing users to:
+ * - Enter contact information
+ * - Describe their desired project
+ * - Optionally upload reference images (with size validation)
+ *
+ * On submission, the form data is sent as a multipart/form-data POST request
+ * to the backend API endpoint `/api/custom-order`.
+ *
+ * The user is redirected to a confirmation page upon successful submission.
+ */
 function CustomOrders() {
+  // Toggle backend availability (useful for maintenance mode)
   const backendAvailable = true;
 
+  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,13 +28,23 @@ function CustomOrders() {
     images: [] as File[],
   });
 
+  // File validation warning messages
   const [fileWarnings, setFileWarnings] = useState<string[]>([]);
 
+  // File input ref (used to manually clear the input)
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // React Router navigation
   const navigate = useNavigate();
 
+  /**
+   * handleSubmit
+   * Called when form is submitted. Validates backend availability,
+   * assembles a FormData payload, and sends it to the backend API.
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!backendAvailable) {
       alert("⚙️ Backend under construction. Please try again later!");
       return;
@@ -30,10 +55,7 @@ function CustomOrders() {
     data.append("email", formData.email);
     data.append("phone", formData.phone);
     data.append("projectDescription", formData.projectDescription);
-
-    formData.images.forEach((file) => {
-      data.append("images", file);
-    });
+    formData.images.forEach((file) => data.append("images", file));
 
     fetch(`${API_URL}/api/custom-order`, {
       method: "POST",
@@ -42,12 +64,16 @@ function CustomOrders() {
       .then((res) => res.json())
       .then((data) => {
         console.log("✅ Backend response:", data);
+
+        // Navigate to confirmation page with state
         navigate("/order-confirmation", {
           state: {
             name: formData.name,
             imagePaths: data.imagePaths,
           },
         });
+
+        // Reset form after successful submission
         setFormData({
           name: "",
           email: "",
@@ -66,6 +92,10 @@ function CustomOrders() {
       });
   };
 
+  /**
+   * handleChange
+   * Updates form fields when user types in inputs or textareas.
+   */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -73,10 +103,14 @@ function CustomOrders() {
     setFormData({ ...formData, [name]: value });
   };
 
+  /**
+   * handleFileChange
+   * Validates file size (max 8MB) and updates image list.
+   */
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      const maxFileSize = 8 * 1024 * 1024; // 5MB
+      const maxFileSize = 8 * 1024 * 1024; // 8MB
       const validFiles: File[] = [];
       const warnings: string[] = [];
 
@@ -97,6 +131,10 @@ function CustomOrders() {
     }
   };
 
+  /**
+   * handleClearPhotos
+   * Clears all selected image files and warnings.
+   */
   const handleClearPhotos = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -112,6 +150,7 @@ function CustomOrders() {
     <div className="container">
       <p className="display-4 text-center fw-medium mt-5">Custom Order Form</p>
 
+      {/* Alert for backend unavailability */}
       {!backendAvailable && (
         <div
           className="alert alert-warning text-center fw-bold mt-3"
@@ -122,6 +161,7 @@ function CustomOrders() {
         </div>
       )}
 
+      {/* Form instructions and contact info */}
       <div
         className="mt-4 mb-4 text-start"
         style={{ maxWidth: "900px", margin: "0 auto" }}
@@ -143,9 +183,11 @@ function CustomOrders() {
         </p>
       </div>
 
+      {/* Form fields */}
       <div className="row">
         <div className="col-md-8 offset-md-2">
           <form onSubmit={handleSubmit} className="pb-5">
+            {/* Name */}
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Your Name <span style={{ color: "red" }}>*</span>
@@ -161,6 +203,7 @@ function CustomOrders() {
               />
             </div>
 
+            {/* Email */}
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Your Email <span style={{ color: "red" }}>*</span>
@@ -176,6 +219,7 @@ function CustomOrders() {
               />
             </div>
 
+            {/* Phone */}
             <div className="mb-3">
               <label htmlFor="phone" className="form-label">
                 Your Phone Number
@@ -190,6 +234,7 @@ function CustomOrders() {
               />
             </div>
 
+            {/* Project Description */}
             <div className="mb-3">
               <label htmlFor="projectDescription" className="form-label">
                 Project Description <span style={{ color: "red" }}>*</span>
@@ -205,12 +250,13 @@ function CustomOrders() {
               />
             </div>
 
+            {/* Image Upload */}
             <div className="mb-3">
               <label htmlFor="images" className="form-label">
                 Attach Images (Optional)
               </label>
 
-              {/* 🟡 Inline file warnings */}
+              {/* Display file warnings */}
               {fileWarnings.length > 0 && (
                 <div className="alert alert-warning mt-2">
                   <ul className="mb-0">
@@ -233,6 +279,7 @@ function CustomOrders() {
               />
             </div>
 
+            {/* Preview Selected Images */}
             {formData.images.length > 0 && (
               <div className="mt-3">
                 <p>Selected Images:</p>
@@ -255,6 +302,7 @@ function CustomOrders() {
               </div>
             )}
 
+            {/* Clear Photos Button */}
             <div className="d-flex justify-content-start">
               <button
                 type="button"
@@ -265,6 +313,7 @@ function CustomOrders() {
               </button>
             </div>
 
+            {/* Submit Button */}
             <div className="d-flex justify-content-center">
               <button
                 type="submit"

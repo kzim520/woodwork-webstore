@@ -1,49 +1,55 @@
+/* === Arrow Container for Carousel Navigation === */
 .arrow-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  text-align: center;
+  display: flex;                  /* Arrange arrows and caption in a row */
+  justify-content: center;       /* Center horizontally */
+  align-items: center;           /* Center vertically */
+  gap: 80px;                     /* Space between arrows and caption */
+  margin-bottom: 1rem;           /* Spacing below the container */
+  flex-wrap: wrap;               /* Allow wrapping on small screens */
+  text-align: center;            /* Center-align caption text */
 }
 
+/* === Caption Positioned Between Arrows === */
 .caption-between-arrows {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
+  flex-direction: column;        /* Stack caption text vertically */
+  align-items: center;           /* Center horizontally */
+  max-width: 300px;              /* Limit caption width */
 }
 
+/* === Caption Text Styling === */
 .caption-between-arrows p {
   margin: 0;
   font-size: 0.9rem;
-  color: #6c757d; /* text-muted */
+  color: #6c757d;                /* Bootstrap’s `text-muted` equivalent */
 }
 
+/* === Custom Arrow Button Styling === */
 .custom-arrow {
-  display: flex;
+  display: flex;                 /* Center the icon inside the circle */
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6);  /* Semi-transparent black */
+  border-radius: 50%;           /* Make it circular */
+  color: white;                 /* Icon color */
+  cursor: pointer;              /* Show pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+/* === Hover State for Arrow Buttons === */
 .custom-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);  /* Darker background on hover */
 }
 
+/* === Responsive Tweaks for Tablets and Below === */
 @media (max-width: 768px) {
   .arrow-container {
-    gap: 40px;
+    gap: 40px;                   /* Reduce spacing between arrows/caption */
   }
 
   .caption-between-arrows p {
-    font-size: 0.85rem;
+    font-size: 0.85rem;          /* Slightly smaller caption text */
   }
 }

@@ -1,54 +1,25 @@
-# React + TypeScript + Vite
+# 🪚 10th Street Woodworks — Full Stack Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **full-stack web application** for 10th Street Woodworks, a custom woodworking portfolio and order form. The project includes:
 
-Currently, two official plugins are available:
+- A **React + TypeScript** frontend for showcasing projects and accepting custom order requests
+- A **Node.js + Express + TypeScript** backend for handling submissions and storing data
+- A **PostgreSQL** database (via Supabase or self-hosted)
+- Support for image uploads, order tracking, and email notification (coming soon!)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Features
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Responsive, mobile-friendly UI
+- Portfolio scroll with image carousels
+- Item detail pages with slick sliders
+- Custom order form with file uploads
+- Confirmation page with preview
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Backend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- REST API for custom order submissions
+- Multer-based image upload handling
+- PostgreSQL database integration
+- Deployed via Render or Elastic Beanstalk

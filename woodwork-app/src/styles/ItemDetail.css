@@ -1,35 +1,41 @@
-.slick-prev, .slick-next {
-  z-index: 1; /* Make sure arrows are above the image */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Add background for better visibility */
-  border-radius: 50%;
-  padding: 10px;
-}
-
-.slick-prev {
-  left: 10px; /* Position the left arrow */
-}
-
+/* === Slick Carousel Arrows === */
+.slick-prev,
 .slick-next {
-  right: 10px; /* Position the right arrow */
+  z-index: 1;                         /* Ensure arrows appear above images */
+  position: absolute;                /* Position relative to image wrapper */
+  top: 50%;                          /* Vertically center the arrows */
+  transform: translateY(-50%);       /* Adjust for perfect vertical centering */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 50%;               /* Make arrows circular */
+  padding: 10px;                    /* Add spacing around icon for better click area */
 }
 
+/* === Positioning for Left Arrow === */
+.slick-prev {
+  left: 10px;                       /* Push away from the left edge */
+}
+
+/* === Positioning for Right Arrow === */
+.slick-next {
+  right: 10px;                      /* Push away from the right edge */
+}
+
+/* === Image Wrapper for Carousel Slides === */
 .carousel-img-wrapper {
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-  display: flex;
+  width: 500px;                     /* Fixed width for consistent layout */
+  height: 500px;                    /* Fixed height to create square container */
+  margin: 0 auto;                   /* Center the image wrapper horizontally */
+  display: flex;                    /* Center image using flexbox */
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden;                 /* Prevent overflow if image exceeds bounds */
 }
 
+/* === Image Styling Inside Carousel === */
 .carousel-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* or 'contain' if you want to see the full image */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: contain;              /* Preserve full image without cropping */
+  border-radius: 8px;               /* Slightly rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle drop shadow for depth */
 }
