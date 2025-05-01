@@ -13,6 +13,8 @@ function CustomOrders() {
     images: [] as File[],
   });
 
+  const [fileWarnings, setFileWarnings] = useState<string[]>([]);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -53,6 +55,7 @@ function CustomOrders() {
           projectDescription: "",
           images: [],
         });
+        setFileWarnings([]);
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
         }
@@ -73,10 +76,24 @@ function CustomOrders() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
+      const maxFileSize = 8 * 1024 * 1024; // 5MB
+      const validFiles: File[] = [];
+      const warnings: string[] = [];
+
+      Array.from(files).forEach((file) => {
+        if (file.size > maxFileSize) {
+          warnings.push(`❌ ${file.name} exceeds the 5MB limit.`);
+        } else {
+          validFiles.push(file);
+        }
+      });
+
       setFormData({
         ...formData,
-        images: [...formData.images, ...Array.from(files)],
+        images: [...formData.images, ...validFiles],
       });
+
+      setFileWarnings(warnings);
     }
   };
 
@@ -88,13 +105,13 @@ function CustomOrders() {
       ...formData,
       images: [],
     });
+    setFileWarnings([]);
   };
 
   return (
     <div className="container">
       <p className="display-4 text-center fw-medium mt-5">Custom Order Form</p>
 
-      {/* 🚧 Backend maintenance notice */}
       {!backendAvailable && (
         <div
           className="alert alert-warning text-center fw-bold mt-3"
@@ -129,7 +146,6 @@ function CustomOrders() {
       <div className="row">
         <div className="col-md-8 offset-md-2">
           <form onSubmit={handleSubmit} className="pb-5">
-            {/* Name field */}
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Your Name <span style={{ color: "red" }}>*</span>
@@ -145,7 +161,6 @@ function CustomOrders() {
               />
             </div>
 
-            {/* Email field */}
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Your Email <span style={{ color: "red" }}>*</span>
@@ -161,7 +176,6 @@ function CustomOrders() {
               />
             </div>
 
-            {/* Phone number field */}
             <div className="mb-3">
               <label htmlFor="phone" className="form-label">
                 Your Phone Number
@@ -176,7 +190,6 @@ function CustomOrders() {
               />
             </div>
 
-            {/* Project description field */}
             <div className="mb-3">
               <label htmlFor="projectDescription" className="form-label">
                 Project Description <span style={{ color: "red" }}>*</span>
@@ -192,11 +205,22 @@ function CustomOrders() {
               />
             </div>
 
-            {/* Images upload field */}
             <div className="mb-3">
               <label htmlFor="images" className="form-label">
                 Attach Images (Optional)
               </label>
+
+              {/* 🟡 Inline file warnings */}
+              {fileWarnings.length > 0 && (
+                <div className="alert alert-warning mt-2">
+                  <ul className="mb-0">
+                    {fileWarnings.map((warning, index) => (
+                      <li key={index}>{warning}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               <input
                 type="file"
                 id="images"
@@ -209,7 +233,6 @@ function CustomOrders() {
               />
             </div>
 
-            {/* Image previews */}
             {formData.images.length > 0 && (
               <div className="mt-3">
                 <p>Selected Images:</p>
@@ -232,7 +255,6 @@ function CustomOrders() {
               </div>
             )}
 
-            {/* Clear images button */}
             <div className="d-flex justify-content-start">
               <button
                 type="button"
@@ -243,7 +265,6 @@ function CustomOrders() {
               </button>
             </div>
 
-            {/* Submit button */}
             <div className="d-flex justify-content-center">
               <button
                 type="submit"

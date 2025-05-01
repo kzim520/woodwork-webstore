@@ -7,22 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Build artifacts
+node_modules/
+dist/
+dist-ssr/
+*.zip
+
+# Local env/config
 *.local
 *.env
 *.env.*
-*.zip
 
-# Editor directories and files
-.vscode/*
+# Uploads (local-only media)
+uploads/
+
+# IDE/editor folders
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-uploads/
+
+# Ignore backend folder — managed in separate Git repo now
+/server/
