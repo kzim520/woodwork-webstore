@@ -86,7 +86,9 @@ export const items: Item[] = [
     id: 4,
     title: "Simple Pine Table",
     images: [
-      { src: "/assets/pinetable.jpg", caption: "Minimalist design" },
+      { src: "/assets/pinetable1.jpg", caption: "Minimalist design" },
+      { src: "/assets/pinetable2.jpg", caption: "Minimalist design" },
+      { src: "/assets/pinetable3.jpg", caption: "Minimalist design" },
     ],
     cardDescription: "Simple yet elegant pine table",
     description: "Clean and minimalist pine table for everyday use.",

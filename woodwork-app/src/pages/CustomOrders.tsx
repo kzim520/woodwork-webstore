@@ -116,7 +116,7 @@ function CustomOrders() {
 
       Array.from(files).forEach((file) => {
         if (file.size > maxFileSize) {
-          warnings.push(`❌ ${file.name} exceeds the 5MB limit.`);
+          warnings.push(`❌ ${file.name} exceeds the 8MB limit.`);
         } else {
           validFiles.push(file);
         }
@@ -178,7 +178,9 @@ function CustomOrders() {
         <p className="fw-medium">
           <span style={{ color: "black" }}>*</span> If you have any questions
           feel free to email me at{" "}
-          <a href="mailto:kevinzimmer520@gmail.com">kevinzimmer520@gmail.com</a>
+          <a href="mailto:10thstreetwoodwork@gmail.com">
+            10thstreetwoodwork@gmail.com
+          </a>
           .
         </p>
       </div>
