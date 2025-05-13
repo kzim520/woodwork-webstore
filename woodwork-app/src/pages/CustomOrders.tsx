@@ -63,7 +63,7 @@ function CustomOrders() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("✅ Backend response:", data);
+        // console.log("✅ Backend response:", data);
 
         // Navigate to confirmation page with state
         navigate("/order-confirmation", {
