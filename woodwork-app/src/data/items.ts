@@ -41,23 +41,16 @@ export const items: Item[] = [
     id: 1,
     title: "Mid-Century Modern Coffee Table",
     images: [
-      { src: "/assets/OakCoffee1.jpg", caption: "Modern look" },
-      { src: "/assets/OakCoffee2.jpg", caption: "Modern look" },
-      { src: "/assets/OakCoffee3.jpg", caption: "Modern look" },
-      { src: "/assets/OakCoffee4.jpg", caption: "Modern look" },
+      { src: "/assets/OakCoffee1.jpg", caption: "Beautiful White Oak" },
+      { src: "/assets/OakCoffee2.jpg", caption: "Beautiful White Oak" },
+      { src: "/assets/OakCoffee3.jpg", caption: "Beautiful White Oak" },
+      { src: "/assets/OakCoffee4.jpg", caption: "Beautiful White Oak" },
     ],
     cardDescription: "Modern Oak Coffee Table",
-    description: "Coffee table with a",
+    description: "Timeless mid-century coffee table, made from solid oak",
     message:
-      "*Read description below for recommended dimensions. The max width I can accommodate is 12.5in. Dimensions in pictures: 21in x 12.5in x 1.5in (length x width x thickness)",
-    detailedDescription: `Designed with durability 
-    and style in mind, each board is made from premium hardwoods and finished with food-safe oils and beeswax to 
-    ensure long-lasting performance and beauty. Every board is fully customizable—you can choose the wood species, 
-    thickness, length and pattern to suit your needs or kitchen aesthetic. Whether you're looking for a compact prep board 
-    or a large serving piece, this cutting board can be tailored to your exact specifications. Recommended Dimensions:
-    Width: 8"–12.5", Length: 16"–21", Thickness: 1.5"–2.5". Pricing is based on size and wood choice, and quotes are 
-    available upon request through the "Custom Orders" tab. Perfect for both daily use and presentation, these cutting 
-    boards makes a thoughtful gift or a functional statement piece for your own home.`
+      "*Available in custom dimensions and finishes. Dimensions in pictures: 45.5in x 18in x 17.5in (w x d x h)",
+    detailedDescription: `This coffee table features a mid-century modern design, crafted from solid oak and finished with Osmo Polyx hardwax oil to protect and enhance the natural grain. Fill out a custom order form if interested!`
   },
   {
     id: 2,

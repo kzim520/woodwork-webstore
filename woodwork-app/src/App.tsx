@@ -6,6 +6,7 @@ import Shop from "./pages/Shop";
 import ItemDetail from "./pages/ItemDetail";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import ScrollToTop from "./components/ScrollToTop";
+import ShopItemDetail from "./pages/ShopItemDetail";
 
 /**
  * App Component
@@ -39,6 +40,7 @@ function App() {
           <Route path="custom-orders" element={<CustomOrders />} />
           <Route path="shop" element={<Shop />} />
           <Route path="item/:id" element={<ItemDetail />} />
+          <Route path="shop/:id" element={<ShopItemDetail />} />
           <Route path="order-confirmation" element={<OrderConfirmation />} />
         </Route>
       </Routes>
