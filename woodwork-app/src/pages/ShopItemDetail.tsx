@@ -10,6 +10,10 @@ import "../styles/ItemDetail.css"; // reuse styles from portfolio
 function ShopItemDetail() {
   const { id } = useParams<{ id: string }>();
   const [item, setItem] = useState<ShopItem | undefined>(undefined);
+  const [selectedOption, setSelectedOption] = useState<string | undefined>(
+    undefined
+  );
+  const [showMessage, setShowMessage] = useState(false);
   const sliderRef = useRef<Slider | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -83,16 +87,55 @@ function ShopItemDetail() {
         <div className="col-md-6">
           <h2 className="text-primary mb-3">{item.title}</h2>
           <p className="lead">{item.description}</p>
+          <p className="msg">{item.message}</p>
 
           <div className="bg-light p-4 rounded shadow-sm">
             <h4 className="text-dark mb-3">Detailed Description</h4>
             <p>{item.detailedDescription}</p>
 
-            <h5 className="text-success mt-4">${item.price}</h5>
+            {item.options && item.options.length > 0 && (
+              <div className="mb-3">
+                <label htmlFor="itemOption" className="form-label">
+                  Choose an option:
+                </label>
+                <select
+                  id="itemOption"
+                  className="form-select"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                >
+                  <option value="">-- Select an option --</option>
+                  {item.options.map((option, idx) => (
+                    <option key={idx} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-            <button className="btn btn-primary mt-3" disabled>
-              Purchase Coming Soon
+            <button
+              className="btn btn-primary mt-3"
+              onClick={() => {
+                setShowMessage(true);
+                setTimeout(() => setShowMessage(false), 6000); // hide after 6s
+              }}
+              disabled={
+                item.options && item.options.length > 0 && !selectedOption
+              }
+            >
+              Purchase
             </button>
+            {showMessage && (
+              <div className="alert alert-info mt-3">
+                Purchase functionality still under development. If you're
+                interested in this item, please email me at{" "}
+                <a href="mailto:10thstreetwoodwork@gmail.com">
+                  10thstreetwoodwork@gmail.com
+                </a>
+                .
+              </div>
+            )}
           </div>
         </div>
       </div>

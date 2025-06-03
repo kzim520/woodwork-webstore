@@ -54,6 +54,19 @@ export const items: Item[] = [
   },
   {
     id: 2,
+    title: "Rustic Oak End Table",
+    images: [
+      { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
+      { src: "/assets/RusticOak2.jpg", caption: "Rustic finish" },
+    ],
+    cardDescription: "Oak table with a weathered finish",
+    description: "Rustic oak table with natural grain character.",
+    message: "*Available in custom dimensions and finishes. Dimensions in pictures: 27in x 27in x 24in (w x d x h)",
+    detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Fill out a custom order form if interested!`
+  },
+  {
+    id: 3,
+    
     title: "Custom Cutting Boards",
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
@@ -73,19 +86,23 @@ export const items: Item[] = [
     boards makes a thoughtful gift or a functional statement piece for your own home.`
   },
   {
-    id: 3,
-    title: "Rustic Oak End Table",
+    id: 4,
+    title: "Custom Picture Frames",
     images: [
-      { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
-      { src: "/assets/RusticOak2.jpg", caption: "Rustic finish" },
+      { src: "/assets/PictureFrames.jpg", caption: "Walnut Splines" },
+      { src: "/assets/PictureFrames2.jpg", caption: "Custom Sizes" },
+      { src: "/assets/WhiteOakPF.jpg", caption: "White Oak" },
+      { src: "/assets/RedOakPF.jpg", caption: "Red Oak" },
+      { src: "/assets/PinePF.jpg", caption: "Pine" },
+      { src: "/assets/PictureFrames3.jpg", caption: "Details" },
     ],
-    cardDescription: "Oak table with a weathered finish",
-    description: "Rustic oak table with natural grain character.",
-    message: "*Available in custom dimensions and finishes. Dimensions in pictures: 27in x 27in x 24in (w x d x h)",
-    detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Fill out a custom order form if interested!`
+    cardDescription: "Choose your size and we'll make it happen",
+    description: "Picture frames featuring decorative splines that add both beauty and structural strength to each corner joint.",
+    message: "*Available in custom dimensions and finishes. All frames in pictures are: 8in x 10in. Meaning they will hold pictures that are 8x10",
+    detailedDescription: `Each frame is handcrafted to your specified dimensions using your choice of hardwood—walnut, oak, cherry, maple, etc. Built with precision-mitered corners and reinforced with decorative splines for added strength and visual interest. I use durable acrylic instead of traditional glass for enhanced clarity and shatter resistance. Whether you're framing artwork, photographs, or keepsakes, these custom frames offer timeless craftsmanship tailored to your needs.`
   },
   {
-    id: 4,
+    id: 5,
     title: "Modern Farmhouse Coffee Table",
     images: [
       { src: "/assets/coffeetable1.jpg", caption: "Full view" },
@@ -98,7 +115,7 @@ export const items: Item[] = [
     detailedDescription: `This coffee table adopts the farmhouse style and modern sleek finish. Built for both style and durability, it's ideal as the centerpiece of a cozy living room setup. Fill out a custom order form if interested!`
   },
   {
-    id: 5,
+    id: 6,
     title: "Simple Pine Table",
     images: [
       { src: "/assets/pinetable1.jpg", caption: "Minimalist design" },
@@ -111,7 +128,7 @@ export const items: Item[] = [
     detailedDescription: `This minimalist table made from natural pine features tapered legs and is a versatile addition to any space. Whether used as a nightstand, end table, or entryway table, its simplicity lets the wood speak for itself. Protected with a clear finish, it's made to last. If requested, a drawer can be added for storage.`
   },
   {
-    id: 6,
+    id: 7,
     title: "Refinishing Services",
     images: [
       { src: "/assets/greennightstand.jpg", caption: "Refinished nightstand" },

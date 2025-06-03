@@ -5,7 +5,7 @@ type ShopItemCardProps = {
   title: string;
   imageSrc: string;
   description: string;
-  price?: string; // Optional for items that are in stock
+  price?: string;
 };
 
 function ShopItemCard({

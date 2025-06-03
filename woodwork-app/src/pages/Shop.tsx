@@ -14,7 +14,15 @@ function Shop() {
             title="Mid-Century Modern Coffee Table"
             imageSrc="/assets/OakCoffee1.jpg"
             description="Crafted from solid oak and finished with Osmo Polyx hardwax oil to protect and enhance the natural grain."
-            price="1000"
+          />
+        </div>
+
+        <div className="col-md-6 col-lg-4 mb-4">
+          <ShopItemCard
+            id="custom-picture-frames"
+            title="Custom Picture Frames"
+            imageSrc="/assets/PictureFrames.jpg"
+            description="Built to your dimensions with your choice of wood and reinforced spline joints."
           />
         </div>
       </div>
