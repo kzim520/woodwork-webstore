@@ -42,7 +42,7 @@ export const shopItems: ShopItem[] = [
         caption: "Beautiful White Oak",
       },
     ],
-    options: ["White Oak - $1000"]
+    options: ["White Oak - $849.99"]
   },
   {
     id: "custom-picture-frames",
