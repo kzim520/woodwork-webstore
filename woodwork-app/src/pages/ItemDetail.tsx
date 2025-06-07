@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { items, Item } from "../data/items.ts";
 import { CustomPrevArrow, CustomNextArrow } from "../components/Arrow.tsx";
 import "../styles/ItemDetail.css";
+import DropdownSection from "../components/DropdownSection";
 
 /**
  * ItemDetail Component
@@ -109,8 +110,15 @@ function ItemDetail() {
           <p>{item.message}</p>
 
           <div className="bg-light p-4 rounded shadow-sm">
-            <h4 className="text-dark mb-3">Detailed Description</h4>
-            <p>{item.detailedDescription}</p>
+            <DropdownSection title="Detailed Description">
+              <ul className="list-group mb-3">
+                {item.detailedDescription.map((point, index) => (
+                  <li key={index} className="list-group-item">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </DropdownSection>
 
             <div className="mt-4 text-center text-md-start">
               <Link to="/custom-orders" className="btn btn-outline-dark">

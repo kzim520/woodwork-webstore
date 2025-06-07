@@ -27,7 +27,7 @@ export interface Item {
   cardDescription: string;
   description: string;
   message: string;
-  detailedDescription: string;
+  detailedDescription: string [];
 }
 
 // === Data: Portfolio Items ===
@@ -50,7 +50,12 @@ export const items: Item[] = [
     description: "Timeless mid-century coffee table, made from solid oak",
     message:
       "*Available in custom dimensions and finishes. Dimensions in pictures: 45.5in x 18in x 17.5in (w x d x h)",
-    detailedDescription: `This coffee table features a mid-century modern design, crafted from solid oak and finished with Osmo Polyx hardwax oil to protect and enhance the natural grain. Fill out a custom order form if interested!`
+      detailedDescription: [
+        "Features a mid-century modern silhouette with tapered legs.",
+        "Protected with Osmo Polyx hardwax oil, enhancing durability while bringing out the natural beauty of the grain.",
+        "Walnut inlays provide a rich visual contrast against the white oak.",
+        "Crafted from locally sourced white oak."
+      ]
   },
   {
     id: 2,
@@ -62,7 +67,12 @@ export const items: Item[] = [
     cardDescription: "Oak table with a weathered finish",
     description: "Rustic oak table with natural grain character.",
     message: "*Available in custom dimensions and finishes. Dimensions in pictures: 27in x 27in x 24in (w x d x h)",
-    detailedDescription: `Crafted from solid red oak, this end table features a rustic finish that highlights the grain of the wood and adds character to any space. With sturdy construction, it’s perfect for use beside a couch or bed. Fill out a custom order form if interested!`
+    detailedDescription: [
+      "Crafted from solid red oak with a rustic finish that highlights the wood grain.",
+      "Adds warmth and character to any living space.",
+      "Built with sturdy construction, ideal for use beside a couch or bed.",
+      "Interested in a custom version? Fill out the custom order form."
+      ]
   },
   {
     id: 3,
@@ -73,17 +83,18 @@ export const items: Item[] = [
       { src: "/assets/cuttingboard2.jpg", caption: "Maple, Walnut & Cherry" },
     ],
     cardDescription: "Cutting boards handcrafted to your preference",
-    description: "Custom boards with walnut, maple, cherry, and more.",
+    description: "",
     message:
       "*Read description below for recommended dimensions. The max width I can accommodate is 12.5in. Dimensions in pictures: 21in x 12.5in x 1.5in (length x width x thickness)",
-    detailedDescription: `Designed with durability 
-    and style in mind, each board is made from premium hardwoods and finished with food-safe oils and beeswax to 
-    ensure long-lasting performance and beauty. Every board is fully customizable—you can choose the wood species, 
-    thickness, length and pattern to suit your needs or kitchen aesthetic. Whether you're looking for a compact prep board 
-    or a large serving piece, this cutting board can be tailored to your exact specifications. Recommended Dimensions:
-    Width: 8"–12.5", Length: 16"–21", Thickness: 1.5"–2.5". Pricing is based on size and wood choice, and quotes are 
-    available upon request through the "Custom Orders" tab. Perfect for both daily use and presentation, these cutting 
-    boards makes a thoughtful gift or a functional statement piece for your own home.`
+      detailedDescription: [
+        "Crafted from premium hardwoods and finished with food-safe oils and beeswax for lasting performance and natural beauty.",
+        "Fully customizable — choose your preferred wood species, thickness, length, and pattern.",
+        "Can add juice grooves or integrated handles",
+        "Available as compact prep boards or large serving pieces tailored to your needs.",
+        "Recommended dimensions: Width 8\"–12.5\", Length 16\"–21\", Thickness 1.5\"–2.5\".",
+        "Pricing varies based on size and wood choice; quotes available through the 'Custom Orders' tab.",
+        "Perfect for both daily kitchen use and stylish presentation — makes a thoughtful gift or a standout piece for your home."
+      ]
   },
   {
     id: 4,
@@ -96,10 +107,16 @@ export const items: Item[] = [
       { src: "/assets/PinePF.jpg", caption: "Pine" },
       { src: "/assets/PictureFrames3.jpg", caption: "Details" },
     ],
-    cardDescription: "Choose your size and we'll make it happen",
-    description: "Picture frames featuring decorative splines that add both beauty and structural strength to each corner joint.",
+    cardDescription: "Crafted to frame your favorite moments",
+    description: "Crafted to frame your favorite moments",
     message: "*Available in custom dimensions and finishes. All frames in pictures are: 8in x 10in. Meaning they will hold pictures that are 8x10",
-    detailedDescription: `Each frame is handcrafted to your specified dimensions using your choice of hardwood—walnut, oak, cherry, maple, etc. Built with precision-mitered corners and reinforced with decorative splines for added strength and visual interest. I use durable acrylic instead of traditional glass for enhanced clarity and shatter resistance. Whether you're framing artwork, photographs, or keepsakes, these custom frames offer timeless craftsmanship tailored to your needs.`
+    detailedDescription: [
+      "Each frame is custom-built using your preferred wood species—walnut, oak, maple, cherry, or others.",
+      "Frames are mitered at each corner and reinforced with decorative splines.",
+      "I use acrylic instead of glass for better shatter resistance.",
+      "Perfect for art, photographs, or keepsakes.",
+      "Crafted from locally sourced hardwoods."
+    ]
   },
   {
     id: 5,
@@ -112,7 +129,11 @@ export const items: Item[] = [
     cardDescription: "Farmhouse look with a modern twist",
     description: "Blending traditional farmhouse charm with a modern look",
     message: "*Available in custom dimensions and finishes. Dimensions in pictures: 46in x 22in x 18in (w x d x h)",
-    detailedDescription: `This coffee table adopts the farmhouse style and modern sleek finish. Built for both style and durability, it's ideal as the centerpiece of a cozy living room setup. Fill out a custom order form if interested!`
+    detailedDescription: [
+      "Blends farmhouse charm with a modern, sleek finish.",
+      "Built for both style and durability, making it ideal as a living room centerpiece.",
+      "Interested in a custom version? Fill out the custom order form."
+    ]
   },
   {
     id: 6,
@@ -125,7 +146,13 @@ export const items: Item[] = [
     cardDescription: "Simple yet elegant pine table",
     description: "Clean and minimalist pine table for everyday use.",
     message: "*Available in custom dimension and finishes. Dimensions in pictures: 21in x 21in x 27in (w x d x h)",
-    detailedDescription: `This minimalist table made from natural pine features tapered legs and is a versatile addition to any space. Whether used as a nightstand, end table, or entryway table, its simplicity lets the wood speak for itself. Protected with a clear finish, it's made to last. If requested, a drawer can be added for storage.`
+    detailedDescription: [
+      "Minimalist table made from natural pine with clean tapered legs.",
+      "Versatile design works as a nightstand, end table, or entryway table.",
+      "Simple form allows the natural wood grain to stand out.",
+      "Protected with a clear finish for lasting durability.",
+      "Optional drawer available upon request for added storage."
+    ]
   },
   {
     id: 7,
@@ -137,6 +164,13 @@ export const items: Item[] = [
     cardDescription: "Refinished nightstand from 1950's",
     description: "Bring new life to worn or vintage furniture.",
     message: "*read description below for details regarding refinished furniture",
-    detailedDescription: `Whether it’s a family heirloom or a flea market find, I offer refinishing services to restore and personalize furniture pieces based on your vision. I carefully strip, sand, and refinish each item, making structural repairs as needed and applying high-quality finishes to match your style. From antique dressers and tables to modern cabinets and chairs, I’d be happy to bring your furniture back to life. Fill out a custom order form to describe your piece and what you'd like done. I’ll follow up with a quote and timeline.`
+    detailedDescription: [
+      "Refinishing services available for heirlooms, vintage pieces, or flea market finds.",
+      "Each item is carefully stripped, sanded, and refinished with high-quality materials.",
+      "Structural repairs are made as needed to ensure longevity and stability.",
+      "Finishes are tailored to match your personal style and vision.",
+      "Services available for a wide range of furniture — from antique dressers to modern cabinets.",
+      "Submit a custom order form to describe your piece and goals; I’ll follow up with a quote and timeline."
+    ]
   },
 ];
