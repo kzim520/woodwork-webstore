@@ -8,6 +8,9 @@ import "bootstrap/dist/css/bootstrap.css";
 // Import Bootstrap's JavaScript bundle (includes interactive components like navbar, collapse, modal)
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+// Import Bootstrap Icons for access to vector-based icons (e.g. chevrons, arrows, social icons)
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 /**
  * Entry Point of the React App
  *

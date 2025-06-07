@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { shopItems, ShopItem } from "../data/shopItems";
 import { CustomPrevArrow, CustomNextArrow } from "../components/Arrow.tsx";
-import "../styles/ItemDetail.css"; // reuse styles from portfolio
+import "../styles/ItemDetail.css";
+import DropdownSection from "../components/DropdownSection";
 
 function ShopItemDetail() {
   const { id } = useParams<{ id: string }>();
@@ -90,8 +91,15 @@ function ShopItemDetail() {
           <p className="msg">{item.message}</p>
 
           <div className="bg-light p-4 rounded shadow-sm">
-            <h4 className="text-dark mb-3">Detailed Description</h4>
-            <p>{item.detailedDescription}</p>
+            <DropdownSection title="Detailed Description">
+              <ul className="list-group mb-3 mt-2">
+                {item.detailedDescription.map((point, index) => (
+                  <li key={index} className="list-group-item">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </DropdownSection>
 
             {item.options && item.options.length > 0 && (
               <div className="mb-3">
