@@ -72,7 +72,7 @@ function MyWork() {
               raw materials into unique, handcrafted furniture that fits
               perfectly into someone’s home. Whether you’re looking for a
               custom-built piece or just browsing, you’re supporting a recent
-              grad trying to start his dream business (one project at a time).
+              grad trying to start a small business (one project at a time).
               Take a look around, and if you have an idea, let’s make it happen!
             </p>
 

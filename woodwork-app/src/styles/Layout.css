@@ -1,0 +1,28 @@
+.mywork-background {
+  background-image: url("/assets/wood-bg4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.mywork-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* On screens 768px wide or less (typical mobile) */
+@media (max-width: 768px) {
+  .mywork-overlay {
+    background-color: rgba(255, 255, 255, 0.7); /* More transparent on mobile */
+  }
+}
+
+footer {
+  background-color: #f8f9fa; 
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
