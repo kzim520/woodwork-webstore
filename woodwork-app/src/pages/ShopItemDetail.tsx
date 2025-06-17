@@ -4,6 +4,9 @@ import { shopItems, ShopItem } from "../data/shopItems";
 import "../styles/ItemDetail.css";
 import DropdownSection from "../components/DropdownSection";
 import ImageCarousel from "../components/ImageCarousel";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 function ShopItemDetail() {
   // Get the item ID from the route parameter
@@ -34,7 +37,19 @@ function ShopItemDetail() {
   }
 
   return (
-    <div className="container mt-5">
+    <motion.div
+      className="container mt-5"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Link
+        to="/shop"
+        className="btn btn-outline-secondary mb-4 d-inline-flex align-items-center gap-2"
+      >
+        <FiArrowLeft size={18} /> Back to Shop
+      </Link>
       <div className="row">
         {/* === Image Carousel Section (Reused Component) === */}
         <ImageCarousel images={item.images} title={item.title} />
@@ -107,7 +122,7 @@ function ShopItemDetail() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

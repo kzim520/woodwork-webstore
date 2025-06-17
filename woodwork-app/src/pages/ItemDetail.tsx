@@ -4,6 +4,7 @@ import { items, Item } from "../data/items.ts";
 import "../styles/ItemDetail.css";
 import DropdownSection from "../components/DropdownSection";
 import ImageCarousel from "../components/ImageCarousel";
+import { shopItems } from "../data/shopItems";
 
 /**
  * ItemDetail Component
@@ -25,7 +26,7 @@ function ItemDetail() {
   // Load the item when the ID parameter changes
   useEffect(() => {
     if (id) {
-      const foundItem = items.find((item) => item.id === parseInt(id));
+      const foundItem = items.find((item) => item.id === id);
       setItem(foundItem);
     }
   }, [id]);
@@ -34,6 +35,10 @@ function ItemDetail() {
   if (!item) {
     return <div className="container text-center mt-5">Item not found!</div>;
   }
+
+  const matchingShopItem = shopItems.find(
+    (shopItem) => shopItem.id === item.id
+  );
 
   // === Render ===
   return (
@@ -66,6 +71,16 @@ function ItemDetail() {
                 Start a Custom Order
               </Link>
             </div>
+            {matchingShopItem && (
+              <div className="mt-3 text-center text-md-start">
+                <Link
+                  to={`/shop/${matchingShopItem.id}`}
+                  className="btn btn-primary"
+                >
+                  View in Shop
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export interface ItemImage {
  * - `detailedDescription`: Rich, longer-form description shown on the item detail page.
  */
 export interface Item {
-  id: number;
+  id: string;
   title: string;
   images: ItemImage[];
   cardDescription: string;
@@ -38,7 +38,7 @@ export interface Item {
  */
 export const items: Item[] = [
   {
-    id: 1,
+    id: "midcentury-coffee",
     title: "Mid-Century Modern Coffee Table",
     images: [
       { src: "/assets/OakCoffee1.jpg", caption: "Beautiful White Oak" },
@@ -58,7 +58,7 @@ export const items: Item[] = [
       ]
   },
   {
-    id: 2,
+    id: "rustic-oak-end-table",
     title: "Rustic Oak End Table",
     images: [
       { src: "/assets/RusticOak.jpg", caption: "Rustic finish" },
@@ -75,8 +75,7 @@ export const items: Item[] = [
       ]
   },
   {
-    id: 3,
-    
+    id: "custom-cutting-boards",
     title: "Custom Cutting Boards",
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
@@ -97,7 +96,7 @@ export const items: Item[] = [
       ]
   },
   {
-    id: 4,
+    id: "custom-picture-frames",
     title: "Custom Picture Frames",
     images: [
       { src: "/assets/PictureFrames.jpg", caption: "Walnut Splines" },
@@ -119,7 +118,7 @@ export const items: Item[] = [
     ]
   },
   {
-    id: 5,
+    id: "modern-farmhouse-coffee-table",
     title: "Modern Farmhouse Coffee Table",
     images: [
       { src: "/assets/coffeetable1.jpg", caption: "Full view" },
@@ -136,7 +135,7 @@ export const items: Item[] = [
     ]
   },
   {
-    id: 6,
+    id: "simple-pine-table",
     title: "Simple Pine Table",
     images: [
       { src: "/assets/pinetable1.jpg", caption: "Minimalist design" },
@@ -155,7 +154,7 @@ export const items: Item[] = [
     ]
   },
   {
-    id: 7,
+    id: "refinishing-services",
     title: "Refinishing Services",
     images: [
       { src: "/assets/greennightstand.jpg", caption: "Refinished nightstand" },

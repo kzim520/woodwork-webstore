@@ -1,4 +1,5 @@
 import ShopItemCard from "../components/ShopItemCard";
+import { shopItems } from "../data/shopItems";
 
 function Shop() {
   return (
@@ -8,23 +9,16 @@ function Shop() {
       </p>
 
       <div className="row justify-content-center mt-5">
-        <div className="col-md-6 col-lg-4 mb-4">
-          <ShopItemCard
-            id="midcentury-coffee"
-            title="Mid-Century Modern Coffee Table"
-            imageSrc="/assets/OakCoffee1.jpg"
-            description="Crafted from solid oak and finished with Osmo Polyx hardwax oil to protect and enhance the natural grain."
-          />
-        </div>
-
-        <div className="col-md-6 col-lg-4 mb-4">
-          <ShopItemCard
-            id="custom-picture-frames"
-            title="Custom Picture Frames"
-            imageSrc="/assets/PictureFrames.jpg"
-            description="Built to your dimensions with your choice of wood and reinforced spline joints."
-          />
-        </div>
+        {shopItems.map((item) => (
+          <div className="col-md-6 col-lg-4 mb-4" key={item.id}>
+            <ShopItemCard
+              id={item.id}
+              title={item.title}
+              imageSrc={item.images[0].src}
+              description={item.description}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
