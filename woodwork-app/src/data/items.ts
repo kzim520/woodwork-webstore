@@ -58,6 +58,26 @@ export const items: Item[] = [
       ]
   },
   {
+    id: "built-in",
+    title: "Entry Room Built-In",
+    images: [
+      { src: "/assets/built-in2.jpg", caption: "Subtle poplar beauty" },
+      { src: "/assets/built-in.jpg", caption: "Subtle poplar beauty" },
+      { src: "/assets/built-in6.jpg", caption: "Subtle poplar beauty" },
+      { src: "/assets/built-in9.jpg", caption: "Subtle poplar beauty" },
+    ],
+    cardDescription: "Accentuated by the beauty of poplar",
+    description: "Entry room built-in, made from poplar.",
+    message:
+      "*Available in custom dimensions and finishes.",
+      detailedDescription: [
+        "Features a poplar bench on top of cabinets.",
+        "Protected with polyurethane, enhancing durability while bringing out the natural beauty of the grain.",
+        "White oak slatted wall enhances the overall look.",
+        "Crafted from locally sourced lumber."
+      ]
+  },
+  {
     id: "rustic-oak-end-table",
     title: "Rustic Oak End Table",
     images: [
@@ -76,7 +96,7 @@ export const items: Item[] = [
   },
   {
     id: "custom-cutting-boards",
-    title: "Custom Cutting Boards",
+    title: "Cutting Boards",
     images: [
       { src: "/assets/cuttingboard.jpg", caption: "Walnut & Cherry" },
       { src: "/assets/cuttingboard2.jpg", caption: "Maple, Walnut & Cherry" },
@@ -97,7 +117,7 @@ export const items: Item[] = [
   },
   {
     id: "custom-picture-frames",
-    title: "Custom Picture Frames",
+    title: "Picture Frames",
     images: [
       { src: "/assets/PictureFrames.jpg", caption: "Walnut Splines" },
       { src: "/assets/PictureFrames2.jpg", caption: "Custom Sizes" },

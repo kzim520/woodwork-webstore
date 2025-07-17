@@ -79,10 +79,6 @@ export const shopItems: ShopItem[] = [
         src: "/assets/PinePF.jpg",
         caption: "Pine",
       },
-      {
-        src: "/assets/PictureFrames3.jpg",
-        caption: "Details",
-      },
     ],
     options: ["White Oak - $60", "Red Oak - $60", "Pine - $40"]
   }

@@ -65,15 +65,16 @@ function MyWork() {
           <div className="text-center p-3">
             <p className="fs-3">Hi, I’m Kevin Zimmer!</p>
             <p className="fs-5">
-              I’m a recent graduate with a degree in Computer Science—but when
-              I’m not coding, you’ll find me covered in sawdust, bringing custom
-              woodworking projects to life. Woodworking started as a hobby but
-              quickly became a passion. There’s something special about turning
-              raw materials into unique, handcrafted furniture that fits
-              perfectly into someone’s home. Whether you’re looking for a
-              custom-built piece or just browsing, you’re supporting a recent
-              grad trying to start a small business (one project at a time).
-              Take a look around, and if you have an idea, let’s make it happen!
+              I’m a recent Computer Science graduate from Colorado School of
+              Mines. Currently I'm working part-time as a web developer while
+              actively exploring full-time opportunities in tech. Outside of
+              coding, I run a small side business building custom woodworking
+              projects. What started as a hobby has grown into a creative outlet
+              where I get to design and craft unique, functional pieces by hand.
+              It’s a satisfying contrast to screen-based work and keeps me sharp
+              in problem-solving and attention to detail. Whether you’re here to
+              browse or want to collaborate on a piece, I appreciate your
+              support as I continue growing both professionally and creatively.
             </p>
 
             {/* CTA Buttons */}
