@@ -1,48 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Portfolio from "../components/Portfolio";
-// import { API_URL } from "../utils/api";
+import { items } from "../data/items";
 
-/**
- * MyWork Component
- *
- * Serves as the landing page to introduce the creator (Kevin Zimmer)
- * and showcase recent woodworking projects. The page includes:
- * - A personal intro and portrait
- * - Buttons to navigate to the custom order form or scroll to the portfolio
- * - A reusable <Portfolio /> component displaying project cards
- */
 function MyWork() {
-  const portfolioRef = useRef<HTMLDivElement>(null); // Ref for scroll-to-section
+  const [activeTab, setActiveTab] = useState<"recent" | "shop">("shop");
+  const portfolioRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  /**
-   * useEffect (on mount)
-   * Used for optional backend health check.
-   * Left commented out to avoid unnecessary fetches in production.
-   */
-  useEffect(() => {
-    // console.log("MyWork loaded — API fetch commented out.");
-    // test backend connectivity during development
-    // fetch(`${API_URL}/api/hello`)
-    //   .then((res) => res.json())
-    //   .then((data) => console.log("🚀 Backend says:", data))
-    //   .catch((err) => console.error("❌ Backend error:", err));
-  }, []);
-
-  /**
-   * Scroll smoothly to the portfolio section
-   */
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  /**
-   * Navigate to the custom orders form
-   */
-  const handleNavigateToCustomOrders = () => {
-    navigate("/custom-orders");
+  const handleNavigateToShop = () => {
+    navigate("/shop");
   };
+
+  // Filter items based on active tab
+  const filteredItems =
+    activeTab === "recent"
+      ? items.filter((item) => item.category !== "shop")
+      : items.filter((item) => item.category === "shop");
 
   return (
     <div className="container">
@@ -55,7 +33,7 @@ function MyWork() {
       <div className="row">
         <div className="col-md-4 d-flex justify-content-center">
           <img
-            src="/assets/portrait.jpg"
+            src="/assets/data/portrait.jpg"
             alt="My portrait"
             className="img-fluid mt-5 border border-dark rounded"
             style={{ width: "350px", height: "auto" }}
@@ -66,25 +44,23 @@ function MyWork() {
             <p className="fs-3">Hi, I’m Kevin Zimmer!</p>
             <p className="fs-5">
               I’m a recent Computer Science graduate from Colorado School of
-              Mines. Currently I'm working part-time as a web developer while
-              actively exploring full-time opportunities in tech. Outside of
-              coding, I run a small side business building custom woodworking
-              projects. What started as a hobby has grown into a creative outlet
-              where I get to design and craft unique, functional pieces by hand.
-              It’s a satisfying contrast to screen-based work and keeps me sharp
-              in problem-solving and attention to detail. Whether you’re here to
+              Mines, currently working as a web developer where I design and
+              build interactive websites. Outside of coding, I run a small side
+              business building custom woodworking projects. What started as a
+              hobby has grown into a creative outlet where I get to design and
+              craft unique, functional pieces by hand. It’s a satisfying
+              contrast to screen-based work and keeps me sharp in
+              problem-solving and attention to detail. Whether you’re here to
               browse or want to collaborate on a piece, I appreciate your
               support as I continue growing both professionally and creatively.
             </p>
 
-            {/* CTA Buttons */}
             <button
               className="btn btn-dark btn-lg mt-3"
-              onClick={handleNavigateToCustomOrders}
+              onClick={handleNavigateToShop}
             >
-              Request a Custom Build
+              Check Out the Shop!
             </button>
-
             <button
               className="btn btn-outline-dark btn-lg mt-3 ms-3"
               onClick={scrollToPortfolio}
@@ -95,11 +71,68 @@ function MyWork() {
         </div>
       </div>
 
-      {/* === Portfolio Section === */}
+      {/* === What I Build Section === */}
+      <div className="row text-center mt-5">
+        <p className="display-6 fw-semibold mb-4">Products and Services</p>
+
+        <div className="col-md-4 mb-4">
+          <img
+            src="/assets/icons/furniture-icon.jpg"
+            alt="Furniture icon"
+            style={{ height: "80px", width: "80px" }}
+          />
+          <h5 className="mt-3">Custom Furniture</h5>
+          <p>
+            Tables, benches, built-ins, and more — all tailored to your space.
+          </p>
+        </div>
+
+        <div className="col-md-4 mb-4">
+          <img
+            src="/assets/icons/refinish-icon.jpg"
+            alt="Refinishing icon"
+            style={{ height: "80px", width: "80px" }}
+          />
+          <h5 className="mt-3">Refinishing Services</h5>
+          <p>Restore old pieces with care while preserving their character.</p>
+        </div>
+
+        <div className="col-md-4 mb-4">
+          <img
+            src="/assets/icons/gift-icon.jpg"
+            alt="Cutting board icon"
+            style={{ height: "80px", width: "80px" }}
+          />
+          <h5 className="mt-3">Functional Gifts</h5>
+          <p>Handmade cutting boards, picture frames, and more</p>
+        </div>
+      </div>
+
+      {/* === Portfolio Tabs === */}
       <div id="portfolio" ref={portfolioRef}>
-        <p className="display-4 text-center fw-medium mt-5">Recent Projects</p>
+        <p className="display-4 text-center fw-medium mt-5">Explore My Work</p>
+
+        <ul className="nav nav-tabs justify-content-center mt-4" role="tablist">
+          <li className="nav-item" role="presentation">
+            <button
+              className={`nav-link ${activeTab === "shop" ? "active" : ""}`}
+              onClick={() => setActiveTab("shop")}
+            >
+              Currently in Stock
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className={`nav-link ${activeTab === "recent" ? "active" : ""}`}
+              onClick={() => setActiveTab("recent")}
+            >
+              Recent Projects
+            </button>
+          </li>
+        </ul>
+
         <div className="mb-5">
-          <Portfolio />
+          <Portfolio items={filteredItems} />
         </div>
       </div>
     </div>

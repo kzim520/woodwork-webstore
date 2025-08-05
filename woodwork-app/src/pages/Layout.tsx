@@ -47,17 +47,17 @@ const Layout = () => {
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/" end>
-                    My Work
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/custom-orders">
-                    Custom Orders
+                    Home
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/shop">
                     Shop
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/custom-orders">
+                    Custom Orders
                   </NavLink>
                 </li>
               </ul>

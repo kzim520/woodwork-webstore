@@ -26,19 +26,19 @@ export const shopItems: ShopItem[] = [
     price: 1000,
     images: [
       {
-        src: "/assets/OakCoffee1.jpg",
+        src: "/assets/coffee-tables/OakCoffee1.jpg",
         caption: "Beautiful White Oak",
       },
       {
-        src: "/assets/OakCoffee2.jpg",
+        src: "/assets/coffee-tables/OakCoffee2.jpg",
         caption: "Beautiful White Oak",
       },
       {
-        src: "/assets/OakCoffee3.jpg",
+        src: "/assets/coffee-tables/OakCoffee3.jpg",
         caption: "Beautiful White Oak",
       },
       {
-        src: "/assets/OakCoffee4.jpg",
+        src: "/assets/coffee-tables/OakCoffee4.jpg",
         caption: "Beautiful White Oak",
       },
     ],
@@ -46,9 +46,9 @@ export const shopItems: ShopItem[] = [
   },
   {
     id: "custom-picture-frames",
-    title: "Custom Picture Frames",
-    description: "Handcrafted to size with your choice of hardwood.",
-    message: "*Available in custom dimensions and finishes. All frames in pictures are: 8in x 10in. Meaning they will hold pictures that are 8x10",
+    title: "Picture Frames",
+    description: "Handcrafted with locally sourced hardwoods",
+    message: "*Available in custom dimensions and finishes. 8in x 10in means they will hold pictures that are 8x10",
     detailedDescription: [
       "Each frame is custom-built using your preferred wood species—walnut, oak, maple, cherry, or others.",
       "Frames are mitered at each corner and reinforced with decorative splines.",
@@ -60,27 +60,94 @@ export const shopItems: ShopItem[] = [
     price: 150,
     images: [
       {
-        src: "/assets/PictureFrames.jpg",
+        src: "/assets/picture-frames/PictureFrames.jpg",
         caption: "Walnut Splines",
       },
       {
-        src: "/assets/PictureFrames2.jpg",
+        src: "/assets/picture-frames/PictureFrames2.jpg",
         caption: "Custom sizes available",
       },
       {
-        src: "/assets/WhiteOakPF.jpg",
+        src: "/assets/picture-frames/WhiteOakPF.jpg",
         caption: "White Oak",
       },
       {
-        src: "/assets/RedOakPF.jpg",
+        src: "/assets/picture-frames/RedOakPF.jpg",
         caption: "Red Oak",
       },
       {
-        src: "/assets/PinePF.jpg",
+        src: "/assets/picture-frames/PinePF.jpg",
         caption: "Pine",
       },
     ],
-    options: ["White Oak - $60", "Red Oak - $60", "Pine - $40"]
+    options: ["White Oak - $60 (8x10)", "Red Oak - $60 (8x10)", "Pine - $40 (8x10)"]
+  },
+  {
+    id: "custom-cutting-boards",
+    title: "Cutting Boards",
+    description: "Handcrafted with locally sourced hardwoods",
+    message: "*Available in custom dimensions",
+    detailedDescription: [
+      "Each board in handmade using various wood species—walnut, maple, and cherry",
+      "Ergonomic handles added to each board",
+      "Edges mitered along top and bottom",
+      "Finished with food-safe oil and beewax",
+      "Crafted from locally sourced hardwoods."
+    ]
+    ,
+    price: 150,
+    images: [
+      {
+        src: "/assets/cutting-boards/cutting-board-2.jpg",
+        caption: "Various sizes available",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-3.jpg",
+        caption: "Various sizes available",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-4a.jpg",
+        caption: "Contrasting Woods (1)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-5a.jpg",
+        caption: "Currently 30% off (2)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-6a.jpg",
+        caption: "Random Design (3)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-7a.jpg",
+        caption: "Large board (4)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-8a.jpg",
+        caption: "Beautiful Walnut (5)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-9a.jpg",
+        caption: "Beautiful Walnute (6)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-10a.jpg",
+        caption: "Lighter toned (7)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-11a.jpg",
+        caption: "Large board (8)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-6b.jpg",
+        caption: "Unique Patterns",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-4b.jpg",
+        caption: "Uniform Patterns",
+      },
+    ],
+    options: ["1 - $90", "2 - $100", "3 - $100", "4 - $140", "5 - $110", "6 - $100", "7 - Sold Out", "8 - $130"]
   }
+  
   
 ];
