@@ -79,7 +79,7 @@ export const items: Item[] = [
     category: "recent"
   },
   {
-    id: "custom-cutting-boards",
+    id: "cutting-boards",
     title: "Cutting Boards",
     images: [
       { src: "/assets/cutting-boards/cutting-board-5a.jpg", caption: "Ergonomic Handle" },
@@ -102,7 +102,7 @@ export const items: Item[] = [
     category: "shop"
   },
   {
-    id: "custom-picture-frames",
+    id: "picture-frames",
     title: "Picture Frames",
     images: [
       { src: "/assets/picture-frames/PictureFrames.jpg", caption: "Walnut Splines" },

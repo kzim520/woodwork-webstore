@@ -94,7 +94,9 @@ function MyWork() {
             style={{ height: "80px", width: "80px" }}
           />
           <h5 className="mt-3">Refinishing Services</h5>
-          <p>Restore old pieces with care while preserving their character.</p>
+          <p>
+            I restore old pieces with care while preserving their character.
+          </p>
         </div>
 
         <div className="col-md-4 mb-4">

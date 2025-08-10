@@ -15,15 +15,13 @@ function ShopItemDetail() {
   // Store the matching shop item
   const [item, setItem] = useState<ShopItem | undefined>(undefined);
 
-  // Track selected dropdown option (if any)
-  const [selectedOption, setSelectedOption] = useState<string | undefined>(
-    undefined
-  );
+  // Track selected option index (-1 = no selection)
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
-  // Track whether the "purchase" message should be shown
+  // Show confirmation message when purchase is clicked
   const [showMessage, setShowMessage] = useState(false);
 
-  // Find and set the item from the item list once the component mounts or the ID changes
+  // Look up the item based on ID from URL
   useEffect(() => {
     if (id) {
       const foundItem = shopItems.find((item) => item.id === id);
@@ -31,7 +29,7 @@ function ShopItemDetail() {
     }
   }, [id]);
 
-  // If no item matches the given ID, show an error message
+  // If no item matches, show error message
   if (!item) {
     return <div className="container text-center mt-5">Item not found!</div>;
   }
@@ -44,24 +42,31 @@ function ShopItemDetail() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
+      {/* Back link */}
       <Link
         to="/shop"
         className="btn btn-outline-secondary mb-4 d-inline-flex align-items-center gap-2"
       >
         <FiArrowLeft size={18} /> Back to Shop
       </Link>
-      <div className="row">
-        {/* === Image Carousel Section (Reused Component) === */}
-        <ImageCarousel images={item.images} title={item.title} />
 
-        {/* === Item Information Section === */}
+      <div className="row">
+        {/* === Always show carousel; start at selected index === */}
+
+        <ImageCarousel
+          images={item.images}
+          title={item.title}
+          startIndex={selectedIndex >= 0 ? selectedIndex : 0}
+        />
+
+        {/* === Item Info === */}
         <div className="col-md-6">
           <h2 className="text-primary mb-3">{item.title}</h2>
           <p className="lead">{item.description}</p>
           <p className="msg">{item.message}</p>
 
           <div className="bg-light p-4 rounded shadow-sm">
-            {/* Collapsible dropdown for detailed description */}
+            {/* Detailed description in dropdown */}
             <DropdownSection title="Detailed Description">
               <ul className="list-group mb-3 mt-2">
                 {item.detailedDescription.map((point, index) => (
@@ -72,7 +77,7 @@ function ShopItemDetail() {
               </ul>
             </DropdownSection>
 
-            {/* Conditional dropdown menu for product options */}
+            {/* === Option selector dropdown === */}
             {item.options && item.options.length > 0 && (
               <div className="mb-3">
                 <label htmlFor="itemOption" className="form-label">
@@ -81,12 +86,12 @@ function ShopItemDetail() {
                 <select
                   id="itemOption"
                   className="form-select"
-                  value={selectedOption}
-                  onChange={(e) => setSelectedOption(e.target.value)}
+                  value={selectedIndex}
+                  onChange={(e) => setSelectedIndex(Number(e.target.value))}
                 >
-                  <option value="">-- Select an option --</option>
+                  <option value={-1}>-- Select an option --</option>
                   {item.options.map((option, idx) => (
-                    <option key={idx} value={option}>
+                    <option key={idx} value={idx}>
                       {option}
                     </option>
                   ))}
@@ -94,21 +99,21 @@ function ShopItemDetail() {
               </div>
             )}
 
-            {/* Purchase button - enabled only when required option is selected */}
+            {/* === Purchase button === */}
             <button
               className="btn btn-primary mt-3"
               onClick={() => {
                 setShowMessage(true);
-                setTimeout(() => setShowMessage(false), 6000); // Auto-hide after 6 seconds
+                setTimeout(() => setShowMessage(false), 6000);
               }}
               disabled={
-                item.options && item.options.length > 0 && !selectedOption
+                item.options && item.options.length > 0 && selectedIndex === -1
               }
             >
               Purchase
             </button>
 
-            {/* Informational message after clicking "Purchase" */}
+            {/* === Info message after clicking Purchase === */}
             {showMessage && (
               <div className="alert alert-info mt-3">
                 Purchase functionality still under development. If you're

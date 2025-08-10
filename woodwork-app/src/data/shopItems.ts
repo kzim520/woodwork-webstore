@@ -45,7 +45,7 @@ export const shopItems: ShopItem[] = [
     options: ["White Oak - $849.99"]
   },
   {
-    id: "custom-picture-frames",
+    id: "picture-frames",
     title: "Picture Frames",
     description: "Handcrafted with locally sourced hardwoods",
     message: "*Available in custom dimensions and finishes. 8in x 10in means they will hold pictures that are 8x10",
@@ -60,14 +60,6 @@ export const shopItems: ShopItem[] = [
     price: 150,
     images: [
       {
-        src: "/assets/picture-frames/PictureFrames.jpg",
-        caption: "Walnut Splines",
-      },
-      {
-        src: "/assets/picture-frames/PictureFrames2.jpg",
-        caption: "Custom sizes available",
-      },
-      {
         src: "/assets/picture-frames/WhiteOakPF.jpg",
         caption: "White Oak",
       },
@@ -79,11 +71,19 @@ export const shopItems: ShopItem[] = [
         src: "/assets/picture-frames/PinePF.jpg",
         caption: "Pine",
       },
+      {
+        src: "/assets/picture-frames/PictureFrames.jpg",
+        caption: "Walnut Splines",
+      },
+      {
+        src: "/assets/picture-frames/PictureFrames2.jpg",
+        caption: "Custom sizes available",
+      },
     ],
     options: ["White Oak - $60 (8x10)", "Red Oak - $60 (8x10)", "Pine - $40 (8x10)"]
   },
   {
-    id: "custom-cutting-boards",
+    id: "cutting-boards",
     title: "Cutting Boards",
     description: "Handcrafted with locally sourced hardwoods",
     message: "*Available in custom dimensions",
@@ -97,14 +97,6 @@ export const shopItems: ShopItem[] = [
     ,
     price: 150,
     images: [
-      {
-        src: "/assets/cutting-boards/cutting-board-2.jpg",
-        caption: "Various sizes available",
-      },
-      {
-        src: "/assets/cutting-boards/cutting-board-3.jpg",
-        caption: "Various sizes available",
-      },
       {
         src: "/assets/cutting-boards/cutting-board-4a.jpg",
         caption: "Contrasting Woods (1)",
@@ -136,6 +128,14 @@ export const shopItems: ShopItem[] = [
       {
         src: "/assets/cutting-boards/cutting-board-11a.jpg",
         caption: "Large board (8)",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-2.jpg",
+        caption: "Various sizes available",
+      },
+      {
+        src: "/assets/cutting-boards/cutting-board-3.jpg",
+        caption: "Various sizes available",
       },
       {
         src: "/assets/cutting-boards/cutting-board-6b.jpg",
