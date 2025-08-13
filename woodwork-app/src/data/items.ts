@@ -89,13 +89,13 @@ export const items: Item[] = [
     cardDescription: "Handcrafted with durability and beauty in mind",
     description: "",
     message:
-      "*Read description below for recommended dimensions. The max width I can accommodate is 12.5in. Dimensions in pictures: 21in x 12.5in x 1.5in (length x width x thickness)",
+      "*Read description below for recommended dimensions. The max width I can accommodate is 12.75\".",
     detailedDescription: [
       "Crafted from premium hardwoods and finished with food-safe oils and beeswax for lasting performance and natural beauty.",
       "Fully customizable — choose your preferred wood species, thickness, length, and pattern.",
       "Can add juice grooves or integrated handles",
       "Available as compact prep boards or large serving pieces tailored to your needs.",
-      "Recommended dimensions: Width 8\"–12.5\", Length 16\"–21\", Thickness 1.5\"–2.5\".",
+      "Recommended dimensions: Width 8\"–12.5\", Length 14\"–21\", Thickness 1\"–2.5\".",
       "Pricing varies based on size and wood choice; quotes available through the 'Custom Orders' tab.",
       "Perfect for both daily kitchen use and stylish presentation — makes a thoughtful gift or a standout piece for your home."
     ],
@@ -114,7 +114,7 @@ export const items: Item[] = [
     ],
     cardDescription: "Crafted to frame your favorite moments",
     description: "Crafted to frame your favorite moments",
-    message: "*Available in custom dimensions and finishes. All frames in pictures are: 8in x 10in. Meaning they will hold pictures that are 8x10",
+    message: "*Available in custom dimensions and finishes.",
     detailedDescription: [
       "Each frame is custom-built using your preferred wood species—walnut, oak, maple, cherry, or others.",
       "Frames are mitered at each corner and reinforced with decorative splines.",

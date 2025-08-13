@@ -44,15 +44,15 @@ function MyWork() {
             <p className="fs-3">Hi, I’m Kevin Zimmer!</p>
             <p className="fs-5">
               I’m a recent Computer Science graduate from Colorado School of
-              Mines, currently working as a web developer where I design and
-              build interactive websites. Outside of coding, I run a small side
-              business building custom woodworking projects. What started as a
-              hobby has grown into a creative outlet where I get to design and
-              craft unique, functional pieces by hand. It’s a satisfying
-              contrast to screen-based work and keeps me sharp in
-              problem-solving and attention to detail. Whether you’re here to
-              browse or want to collaborate on a piece, I appreciate your
-              support as I continue growing both professionally and creatively.
+              Mines and currently work as a web developer, designing and
+              building interactive websites. Outside of coding, I run a small
+              side business selling woodworking projects. What began as a hobby
+              has grown into a creative outlet where I design and craft unique,
+              functional pieces by hand. It’s a satisfying balance to my
+              screen-based work and keeps my problem-solving skills and
+              attention to detail sharp. Whether you’re here to browse the shop
+              or collaborate on a custom piece, I’m grateful for your support as
+              I continue growing both professionally and creatively.
             </p>
 
             <button

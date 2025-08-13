@@ -4,7 +4,7 @@ import { CustomPrevArrow, CustomNextArrow } from "./Arrow";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-type Image = { src: string; caption?: string };
+type Image = { src: string; caption?: string; size?: string };
 
 type Props = {
   images: Image[];
@@ -14,17 +14,18 @@ type Props = {
 
 const ImageCarousel = ({ images, title, startIndex = 0 }: Props) => {
   const sliderRef = useRef<Slider | null>(null);
-  const [activeIndex, setActiveIndex] = useState(startIndex); // Initialize with startIndex
+  const [activeIndex, setActiveIndex] = useState(startIndex);
 
-  // Keep the slider in sync if startIndex changes externally
   useEffect(() => {
-    if (sliderRef.current && startIndex !== activeIndex) {
+    if (sliderRef.current) {
       sliderRef.current.slickGoTo(startIndex);
       setActiveIndex(startIndex);
     }
   }, [startIndex]);
 
-  const currentCaption = images[activeIndex]?.caption || "";
+  const currentImage = images[activeIndex];
+  const currentCaption = currentImage?.caption ?? "";
+  const currentSize = currentImage?.size ?? "";
 
   const sliderSettings = {
     dots: true,
@@ -34,13 +35,13 @@ const ImageCarousel = ({ images, title, startIndex = 0 }: Props) => {
     slidesToScroll: 1,
     fade: true,
     arrows: false,
-    initialSlide: startIndex, // NEW: set initial slide from props
-    beforeChange: (_: number, next: number) => setActiveIndex(next), // Update caption on slide change
+    initialSlide: startIndex,
+    afterChange: (index: number) => setActiveIndex(index),
   };
 
   return (
     <div className="col-md-6 mb-4 mb-md-0 text-center">
-      {/* Custom arrow buttons and caption between them */}
+      {/* Caption between custom arrows */}
       <div className="arrow-container">
         <div onClick={() => sliderRef.current?.slickPrev()}>
           <CustomPrevArrow />
@@ -49,6 +50,12 @@ const ImageCarousel = ({ images, title, startIndex = 0 }: Props) => {
         <div className="caption-between-arrows">
           <p className="text-muted mb-0" style={{ fontSize: "0.9rem" }}>
             {currentCaption}
+            {currentSize && (
+              <>
+                <br />
+                <small className="text-muted">{currentSize}</small>
+              </>
+            )}
           </p>
         </div>
 
@@ -63,10 +70,13 @@ const ImageCarousel = ({ images, title, startIndex = 0 }: Props) => {
           <div key={index} className="carousel-img-wrapper">
             <img
               src={image.src}
-              alt={image.caption || title}
+              alt={
+                image.caption
+                  ? `${image.caption}${image.size ? ` – ${image.size}` : ""}`
+                  : title
+              }
               className="carousel-img"
               onError={(e) => {
-                // Fallback if image fails to load
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = "/assets/placeholder.jpg";
               }}
