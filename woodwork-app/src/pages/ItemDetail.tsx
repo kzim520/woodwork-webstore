@@ -66,11 +66,13 @@ function ItemDetail() {
             </DropdownSection>
 
             {/* CTA to custom order page */}
-            <div className="mt-4 text-center text-md-start">
-              <Link to="/custom-orders" className="btn btn-outline-dark">
-                Start a Custom Order
-              </Link>
-            </div>
+            {!matchingShopItem && (
+              <div className="mt-4 text-center text-md-start">
+                <Link to="/custom-orders" className="btn btn-outline-dark">
+                  Start a Custom Order
+                </Link>
+              </div>
+            )}
             {matchingShopItem && (
               <div className="mt-3 text-center text-md-start">
                 <Link

@@ -92,7 +92,7 @@ export const items: Item[] = [
       "*Read description below for recommended dimensions. The max width I can accommodate is 12.75\".",
     detailedDescription: [
       "Crafted from premium hardwoods and finished with food-safe oils and beeswax for lasting performance and natural beauty.",
-      "Fully customizable — choose your preferred wood species, thickness, length, and pattern.",
+      "Fully customizable — choose your preferred wood species, thickness, length, and pattern. (Fill out custom order form)",
       "Can add juice grooves or integrated handles",
       "Available as compact prep boards or large serving pieces tailored to your needs.",
       "Recommended dimensions: Width 8\"–12.5\", Length 14\"–21\", Thickness 1\"–2.5\".",
@@ -105,22 +105,61 @@ export const items: Item[] = [
     id: "picture-frames",
     title: "Picture Frames",
     images: [
-      { src: "/assets/picture-frames/PictureFrames.jpg", caption: "Walnut Splines" },
-      { src: "/assets/picture-frames/PictureFrames2.jpg", caption: "Custom Sizes" },
+      { src: "/assets/picture-frames/PictureFrames.jpg", caption: "Walnut splines" },
+      { src: "/assets/picture-frames/PictureFrames2.jpg", caption: "Custom sizes available" },
       { src: "/assets/picture-frames/WhiteOakPF.jpg", caption: "White Oak" },
       { src: "/assets/picture-frames/RedOakPF.jpg", caption: "Red Oak" },
       { src: "/assets/picture-frames/PinePF.jpg", caption: "Pine" },
-      { src: "/assets/picture-frames/PictureFrames3.jpg", caption: "Details" },
     ],
-    cardDescription: "Crafted to frame your favorite moments",
-    description: "Crafted to frame your favorite moments",
+    cardDescription: "Crafted to showcase what you love",
+    description: "All frames include a backing board and shatter-resistant acrylic in place of glass.",
     message: "*Available in custom dimensions and finishes.",
     detailedDescription: [
       "Each frame is custom-built using your preferred wood species—walnut, oak, maple, cherry, or others.",
       "Frames are mitered at each corner and reinforced with decorative splines.",
       "I use acrylic instead of glass for better shatter resistance.",
+      "Bendable tabs make changing the contents easy",
       "Perfect for art, photographs, or keepsakes.",
       "Crafted from locally sourced hardwoods."
+    ],
+    category: "shop"
+  },
+  {
+    id: "mug-holders",
+    title: "Mug Holders",
+    images: [
+      { src: "/assets/mug-holder/mug-holder1.jpg", caption: "Finished with danish oil" },
+      { src: "/assets/mug-holder/mug-holder2.jpg", caption: "Rustic look" },
+    ],
+    cardDescription: "Store your mugs in style",
+    description: "Store your mugs in style",
+    message: "*Available in custom dimensions and finishes.",
+    detailedDescription: [
+      "Can be made to hold your desired number of mugs.",
+      "Designed to hold various mug sizes",
+      "Constructed with reinforced miters for durability.",
+      "Optional wall mounting hardware available upon request",
+      "Finished to highlight the natural grain of the wood.",
+
+    ],
+    category: "shop"
+  },
+  {
+    id: "wine-holders",
+    title: "Wine Holders",
+    images: [
+      { src: "/assets/wine-holder/wine-holder1.jpg", caption: "Finished with rustic stain" },
+      { src: "/assets/wine-holder/wine-holder2.jpg", caption: "" },
+    ],
+    cardDescription: "Store your bottles in style",
+    description: "Store your bottles in style",
+    message: "*Available in custom numbers of holders and finishes.",
+    detailedDescription: [
+      "Can be made to hold your desired number of bottles.",
+      "Designed to hold a wide range of bottle sizes",
+      "Constructed with reinforced rabbet joints.",
+      "Finished to highlight the natural grain of the wood.",
+
     ],
     category: "shop"
   },

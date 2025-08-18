@@ -1,0 +1,137 @@
+/* Keep carousel content visible */
+.image-carousel {
+  overflow: visible;
+}
+
+/* === Thumb Bar (translucent strip) === */
+.thumb-bar {
+  position: relative;
+  margin-top: 12px;
+  padding: 10px 12px;
+  /* Translucent/blur strip that sits inside the overlay */
+  background: rgba(139, 69, 19, 0.25); 
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Inline thumbs + "More" trigger live side-by-side */
+.thumbs-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* allows wrapping if needed on very narrow screens */
+}
+
+/* Buttons that wrap thumbnail images */
+.thumb-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  line-height: 0;
+  outline: none;
+}
+
+/* Thumbnail image style */
+.thumb-img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  display: block;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+
+/* Active/highlighted state */
+.thumb-btn.is-active .thumb-img {
+  border-color: #0d6efd; /* Bootstrap primary */
+  box-shadow: 0 0 0 2px rgba(13,110,253,0.15);
+}
+
+.thumb-btn:hover .thumb-img {
+  transform: translateY(-1px);
+}
+
+/* === More button & dropdown === */
+.thumb-more {
+  position: relative;
+}
+
+.thumb-more-btn {
+  appearance: none;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.65);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: box-shadow .2s, border-color .2s, transform .1s;
+}
+
+.thumb-more-btn:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.18);
+}
+
+.thumb-more-btn:active {
+  transform: translateY(1px);
+}
+
+.thumb-more-btn .chevron {
+  font-size: 0.8rem;
+  transform: translateY(-1px);
+}
+
+/* Dropdown panel for overflow thumbs */
+.thumb-more-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+  min-width: 280px;
+  max-width: 80vw;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 10px;
+  background: rgba(255,255,255,0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* Grid of overflow thumbnails */
+.thumb-more-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* Responsive thumbnail sizes */
+@media (max-width: 576px) {
+  .thumb-img { width: 44px; height: 44px; }
+  .thumb-more-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .thumb-img { width: 56px; height: 56px; }
+}
+
+/* narrow screens wrap bar items more tightly */
+@media (max-width: 420px) {
+  .thumbs-inline { gap: 6px; }
+}

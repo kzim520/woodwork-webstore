@@ -11,6 +11,9 @@
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 10px;
+
+  /* Ensure dots render inside the translucent overlay, not below it */
+  position: relative;
 }
 
 /* On screens 768px wide or less (typical mobile) */
@@ -21,7 +24,7 @@
 }
 
 footer {
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
   color: #555;
   font-size: 0.9rem;
   border-top: 1px solid #ddd;
