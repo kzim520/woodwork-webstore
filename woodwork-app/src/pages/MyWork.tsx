@@ -33,7 +33,7 @@ function MyWork() {
       <div className="row">
         <div className="col-md-4 d-flex justify-content-center">
           <img
-            src="/assets/data/portrait.jpg"
+            src="/assets/data/portrait3.jpg"
             alt="My portrait"
             className="img-fluid mt-5 border border-dark rounded"
             style={{ width: "350px", height: "auto" }}
@@ -43,17 +43,18 @@ function MyWork() {
           <div className="text-center p-3">
             <p className="fs-3">Hi, I’m Kevin Zimmer!</p>
             <p className="fs-5">
-              I graduated from the Colorado School of Mines in May 2025 with a
-              degree in Computer Science, and I’m now working as a web
-              developer, designing and building interactive websites. Outside of
-              coding, I started a side business selling woodworking projects.
-              What began as a hobby has grown into a creative outlet where I
-              design and craft unique, functional pieces by hand. It’s a
-              satisfying balance to my screen-based work and keeps my
-              problem-solving skills and attention to detail sharp. Whether
-              you’re here to browse the shop or collaborate on a custom piece,
-              I’m grateful for your support as I continue growing both
-              professionally and creatively.
+              I’m a software developer and woodworker with a passion for
+              building things, whether that’s designing interactive websites or
+              crafting furniture by hand. What started as a small woodworking
+              hobby has grown into a side business where I design and create
+              unique, functional pieces that blend craftsmanship with
+              creativity. Outside of work, I enjoy mountain biking with my
+              girlfriend, Sammy, it’s another way to challenge myself, explore,
+              and stay inspired. This mix of technical problem-solving, hands-on
+              craftsmanship, and time outdoors keeps me balanced and motivated.
+              Whether you’re here to browse the shop or collaborate on a custom
+              project, I’m grateful for your support as I continue to grow both
+              personally and professionally.
             </p>
 
             <button

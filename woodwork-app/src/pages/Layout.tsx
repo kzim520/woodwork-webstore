@@ -71,7 +71,7 @@ const Layout = () => {
         </div>
         {/* === Footer === */}
         <footer className="mt-5 pt-4 pb-4 border-top text-center small text-muted">
-          <p className="mb-1">© 2025 Kevin Zimmer • 10th Street Woodworks</p>
+          <p className="mb-1">© 2026 Kevin Zimmer • 10th Street Woodworks</p>
           <p className="mb-0">
             Contact:{" "}
             <a href="mailto:10thstreetwoodwork@gmail.com">
